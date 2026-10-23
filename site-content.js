@@ -30,7 +30,11 @@ window.WIOSTREAM_EDIT = {
     email: 'mailto:josephcyute@protonmail.com',
     support: 'https://kreosus.com/wiojelt',
     cloudstreamBeta: 'https://github.com/recloudstream/cloudstream/releases',
-    wioLandRepo: 'https://raw.githubusercontent.com/Wiojelt/WioLand/builds/repo.json'
+    wioLandRepo: 'https://raw.githubusercontent.com/Wiojelt/WioLand/builds/repo.json',
+    bitchordManifest: 'https://raw.githubusercontent.com/Wiojelt/WioLand/main/bitchord/manifest.json',
+    bitchordRepo: 'https://github.com/kushagrasinghx/BitChord',
+    bitchordReleases: 'https://github.com/kushagrasinghx/BitChord/releases',
+    wiolandMusic: 'https://github.com/Wiojelt/WioLand/tree/main/bitchord'
   },
   cards: {
     WioSinema: {summary: 'Birleşik Türkçe film ve dizi keşfi.'},

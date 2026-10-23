@@ -348,4 +348,5 @@ body.has-pointer .pointer-light{opacity:.55}
 .plugin-card.is-expanded .card-actions .card-open{margin:0;padding:0;max-width:none}
 @media(max-width:760px){.card-install .install-label{display:none}.card-install .install-short{display:inline}}
 @media(max-width:560px){.card-actions{gap:5px}.card-actions .card-open{font-size:10px}.card-install{gap:4px;padding:0 7px}.card-install img{width:15px;height:15px}}
+.tab-bar{max-width:100%;overflow-x:auto}.tab{flex-shrink:0}.bitchord-note{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.tab .bitchord-note{width:23px;height:23px;flex:none}.bitchord-art{display:grid;place-items:center;color:rgb(var(--accent))}.bitchord-art .bitchord-note{width:140px;height:140px}.bitchord-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px;color:var(--muted);font-size:12px}.bitchord-links a:hover{text-decoration:underline;text-underline-offset:3px}.bitchord-sources span{font-size:12px;padding:9px 12px}
 

@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#07090c">
-  <meta name="description" content="WioStream: WioLand, CloudStream ve Nuvio için Wiojelt eklentileri, kaynakları ve kurulum bağlantıları.">
+  <meta name="description" content="WioLand: CloudStream, BitChord ve Nuvio için Wiojelt eklentileri ve kurulum bağlantıları.">
   <title>WioStream · Wiojelt eklentileri</title>
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Wiojelt/WioLand/main/assets/logo-20261004.png?rev=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="site.css?v=20261005-direct1">
-  <script src="site-content.js?v=20261005-community1" defer></script>
-  <script src="site.js?v=20261005-direct1" defer></script>
+  <link rel="stylesheet" href="site.css?v=20261023-bitchord1">
+  <script src="site-content.js?v=20261023-bitchord1" defer></script>
+  <script src="site.js?v=20261023-bitchord1" defer></script>
 </head>
 <body>
   <div class="ambient-scene" aria-hidden="true"></div><canvas id="field" aria-hidden="true"></canvas><div class="pointer-light" aria-hidden="true"></div>
@@ -44,6 +44,7 @@
     <div class="tab-bar" id="platforms" role="tablist" aria-label="Platform seçimi">
       <button class="tab" role="tab" id="tab-cloudstream" aria-selected="true" aria-controls="panel-cloudstream" type="button"><img src="https://raw.githubusercontent.com/recloudstream/cloudstream/master/app/src/prerelease/res/mipmap-xxxhdpi/ic_launcher.png" alt="">CloudStream <span>3</span></button>
       <button class="tab" role="tab" id="tab-nuvio" aria-selected="false" aria-controls="panel-nuvio" type="button"><img class="nuvio-icon" src="https://raw.githubusercontent.com/NuvioMedia/NuvioMobile/cmp-rewrite/composeApp/src/commonMain/composeResources/drawable/app_logo_wordmark_original.png" alt="Nuvio"><img src="https://raw.githubusercontent.com/Stremio/stremio-brand/master/logos/SVG/stremio-logo-icon-only-fullcolor.svg" alt="Stremio"><span>Nuvio / Stremio</span></button>
+      <button class="tab" role="tab" id="tab-bitchord" aria-selected="false" aria-controls="panel-bitchord" type="button"><svg class="bitchord-note" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-3v13M9 8l12-3"/><ellipse cx="5.5" cy="18" rx="3.5" ry="3"/><ellipse cx="17.5" cy="15" rx="3.5" ry="3"/></svg>BitChord</button>
     </div>
 
     <section class="platform-panel" id="panel-cloudstream" role="tabpanel" aria-labelledby="tab-cloudstream">
@@ -103,6 +104,33 @@
         <article class="plugin-card glow-card" style="--accent:255 167 58" data-name="WioSpor" data-motion="sport" data-category="Nuvio · Canlı spor" data-description="Canlı spor ve kanal manifesti." data-code="https://raw.githubusercontent.com/Wiojelt/Nuvio-Addons/live/wiospor/manifest.json"><div class="card-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioSpor/main/assets/logo-20261004.png?rev=2" alt="WioSpor futbol logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">CANLI / SPOR · MANİFEST</span><h3>WioSpor</h3><p>Canlı spor ve kanal grupları.</p><button class="card-open" type="button">Kaynakları gör <span>↗</span></button></div><template><p>Karttaki manifest bağlantısını Nuvio uygulamasının Eklentiler / Plugins bölümüne ekle.</p><h4>Canlı kataloglar</h4><div class="source-list"><span>WioSpor Canlı</span><span>Birdirbir IPTV</span></div></template></article>
       </div>
       <div class="install"><div class="section-caption"><span>Nuvio kurulumu</span><p>Her manifest ayrı eklenir.</p></div><div class="step-grid"><article><b>01</b><h3>Uygulamayı kur</h3><p>Yukarıdaki Nuvio Mobil veya Nuvio TV bağlantısından uygulamanı indir.</p></article><article><b>02</b><h3>Manifesti kopyala</h3><p>İstediğin kartı aç; manifest adresinin sonundaki simgeye bas.</p></article><article><b>03</b><h3>Eklentiyi ekle</h3><p>Nuvio’da Eklentiler / Plugins bölümünü aç. Eklenti ekle alanına manifest adresini yapıştırıp kur.</p></article></div></div>
+    </section>
+
+    <section class="platform-panel" id="panel-bitchord" role="tabpanel" aria-labelledby="tab-bitchord" hidden>
+      <div class="land-card glow-card" style="--accent:167 123 250">
+        <div class="land-art bitchord-art" aria-hidden="true"><svg class="bitchord-note" viewBox="0 0 24 24"><path d="M9 18V5l12-3v13M9 8l12-3"/><ellipse cx="5.5" cy="18" rx="3.5" ry="3"/><ellipse cx="17.5" cy="15" rx="3.5" ry="3"/></svg></div>
+        <div class="land-content">
+          <div class="eyebrow">BİTCHORD / MÜZİK</div>
+          <h2>Wioland</h2>
+          <p>Lossless ve Hi-Res müzik kaynaklarını tek bağlantıyla BitChord’a ekle. Kulaklık şartı yok; ses kalitesi ve erişim seçilen sağlayıcıya bağlı.</p>
+          <div class="actions">
+            <button class="button primary" type="button" data-copy="https://raw.githubusercontent.com/Wiojelt/WioLand/main/bitchord/manifest.json" data-edit-copy="bitchordManifest"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>Manifesti kopyala</button>
+            <a class="button outline" href="https://github.com/kushagrasinghx/BitChord/releases" data-edit-href="bitchordReleases" target="_blank" rel="noopener">BitChord indir <span>↗</span></a>
+          </div>
+          <details class="repo-link"><summary>Manifest adresi</summary><div class="repo-url"><a href="https://raw.githubusercontent.com/Wiojelt/WioLand/main/bitchord/manifest.json" data-edit-href="bitchordManifest" data-edit-text="bitchordManifest" target="_blank" rel="noopener">https://raw.githubusercontent.com/Wiojelt/WioLand/main/bitchord/manifest.json</a><button type="button" data-copy="https://raw.githubusercontent.com/Wiojelt/WioLand/main/bitchord/manifest.json" data-edit-copy="bitchordManifest" aria-label="BitChord manifest adresini kopyala" title="Kopyala"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></button></div></details>
+          <div class="bitchord-links"><a href="https://github.com/Wiojelt/WioLand/tree/main/bitchord" data-edit-href="wiolandMusic" target="_blank" rel="noopener">Wioland kaynak kodu ↗</a><a href="https://github.com/kushagrasinghx/BitChord" data-edit-href="bitchordRepo" target="_blank" rel="noopener">BitChord deposu ↗</a></div>
+        </div>
+      </div>
+      <div class="section-caption"><span>Müzik kaynakları</span><p>Her sağlayıcının erişimi ve kayıt kalitesi farklı olabilir.</p></div>
+      <div class="source-list bitchord-sources"><span>Monochrome</span><span>QQDL / Lucida</span><span>juanjob Hi-Res</span><span>Lossless Bridge</span><span>Eljohnzc</span><span>Tido</span><span>gglos</span><span>Qobuz</span><span>LastBabe</span><span>Internet Archive</span></div>
+      <div class="install">
+        <div class="section-caption"><span>BitChord kurulumu</span><p>Eski Wioland kaynağın varsa önce kaldır.</p></div>
+        <div class="step-grid">
+          <article><b>01</b><h3>BitChord’u kur</h3><p>Uygulamayı resmi <a href="https://github.com/kushagrasinghx/BitChord/releases" data-edit-href="bitchordReleases" target="_blank" rel="noopener">sürüm sayfasından ↗</a> indir.</p></article>
+          <article><b>02</b><h3>Manifesti kopyala</h3><p>Yukarıdaki <strong>Manifesti kopyala</strong> düğmesine bas.</p></article>
+          <article><b>03</b><h3>Kaynağı ekle</h3><p>BitChord’da <strong>Ayarlar → Kaynaklar → Eklenti ekle</strong> bölümüne bağlantıyı yapıştırıp kaydet.</p></article>
+        </div>
+      </div>
     </section>
 
     <section class="community" aria-labelledby="community-title">

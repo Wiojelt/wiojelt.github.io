@@ -2,7 +2,7 @@
   const root = document.documentElement;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const tabs = [...document.querySelectorAll('[role="tab"]')];
-  const panels = {cloudstream: document.querySelector('#panel-cloudstream'), nuvio: document.querySelector('#panel-nuvio')};
+  const panels = {cloudstream: document.querySelector('#panel-cloudstream'), nuvio: document.querySelector('#panel-nuvio'), bitchord: document.querySelector('#panel-bitchord')};
   const themeButton = document.querySelector('#theme-toggle');
   const paletteButton = document.querySelector('#palette-toggle');
   const paletteMenu = document.querySelector('#palette-menu');
