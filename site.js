@@ -116,6 +116,7 @@
     if (!panels[id]) return;
     if (activeCard && !panels[id].contains(activeCard)) setExpanded(activeCard, false);
     tabs.forEach(tab => { tab.setAttribute('aria-selected', String(tab.id === `tab-${id}`)); tab.tabIndex = tab.id === `tab-${id}` ? 0 : -1; });
+    tabs.find(tab => tab.id === `tab-${id}`)?.scrollIntoView({block: 'nearest', inline: 'nearest', behavior: 'auto'});
     document.querySelectorAll('[data-tab-link]').forEach(link => link.classList.toggle('is-active', link.dataset.tabLink === id));
     Object.entries(panels).forEach(([key, panel]) => { panel.hidden = key !== id; });
     if (scroll) document.querySelector('#platforms').scrollIntoView({behavior: reduced ? 'auto' : 'smooth', block: 'start'});
