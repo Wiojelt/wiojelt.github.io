@@ -10,10 +10,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="site.css?v=20261023-lang-tv1">
-  <script src="site-content.js?v=20261023-lang-tv1" defer></script>
-  <script src="site-i18n.js?v=20261023-lang-tv1" defer></script>
-  <script src="site.js?v=20261023-lang-tv1" defer></script>
+  <link rel="stylesheet" href="site.css?v=20261023-addons1">
+  <script src="site-content.js?v=20261023-addons1" defer></script>
+  <script src="site-i18n.js?v=20261023-addons1" defer></script>
+  <script src="site.js?v=20261023-addons1" defer></script>
 </head>
 <body>
   <div class="ambient-scene" aria-hidden="true"></div><canvas id="field" aria-hidden="true"></canvas><div class="pointer-light" aria-hidden="true"></div>
@@ -44,11 +44,16 @@
   <main id="top" class="shell">
 
     <div class="tab-bar" id="platforms" role="tablist" aria-label="Platform seçimi">
-      <button class="tab" role="tab" id="tab-cloudstream" aria-selected="true" aria-controls="panel-cloudstream" type="button"><img src="https://raw.githubusercontent.com/recloudstream/cloudstream/master/app/src/prerelease/res/mipmap-xxxhdpi/ic_launcher.png" alt="">CloudStream <span>3</span></button>
-      <button class="tab" role="tab" id="tab-nuvio" aria-selected="false" aria-controls="panel-nuvio" type="button"><img class="nuvio-icon" src="https://raw.githubusercontent.com/NuvioMedia/NuvioMobile/cmp-rewrite/composeApp/src/commonMain/composeResources/drawable/app_logo_wordmark_original.png" alt="Nuvio"><img src="https://raw.githubusercontent.com/Stremio/stremio-brand/master/logos/SVG/stremio-logo-icon-only-fullcolor.svg" alt="Stremio"><span>Nuvio / Stremio</span></button>
+      <button class="tab" role="tab" id="tab-addons" aria-selected="true" aria-controls="panel-addons" type="button"><svg class="addons-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Eklentiler</button>
       <button class="tab" role="tab" id="tab-bitchord" aria-selected="false" aria-controls="panel-bitchord" type="button"><img src="assets/apps/bitchord.webp" alt="">BitChord</button>
       <button class="tab" role="tab" id="tab-wiotv" aria-selected="false" aria-controls="panel-wiotv" type="button"><img src="assets/apps/wiotv.webp" alt="">WioTV <span class="beta-badge">Beta</span></button>
     </div>
+
+    <section class="platform-panel" id="panel-addons" role="tabpanel" aria-labelledby="tab-addons">
+      <div class="tab-bar addon-tabs" id="addon-platforms" role="tablist" aria-label="Eklenti platformu">
+      <button class="tab" role="tab" id="tab-cloudstream" aria-selected="true" aria-controls="panel-cloudstream" type="button"><img src="https://raw.githubusercontent.com/recloudstream/cloudstream/master/app/src/prerelease/res/mipmap-xxxhdpi/ic_launcher.png" alt="">CloudStream <span>3</span></button>
+      <button class="tab" role="tab" id="tab-nuvio" aria-selected="false" aria-controls="panel-nuvio" type="button"><img class="nuvio-icon" src="https://raw.githubusercontent.com/NuvioMedia/NuvioMobile/cmp-rewrite/composeApp/src/commonMain/composeResources/drawable/app_logo_wordmark_original.png" alt="Nuvio"><img src="https://raw.githubusercontent.com/Stremio/stremio-brand/master/logos/SVG/stremio-logo-icon-only-fullcolor.svg" alt="Stremio"><span>Nuvio / Stremio</span></button>
+      </div>
 
     <section class="platform-panel" id="panel-cloudstream" role="tabpanel" aria-labelledby="tab-cloudstream">
       <div class="old-note"><span class="old-dot"></span><strong data-edit-text="announcementTitle">TurkSinema ve TurkSpor kapandı.</strong> <span data-edit-text="announcementBody">Eski depoları kaldırıp WioLand’i ekleyin.</span></div>
@@ -107,6 +112,8 @@
         <article class="plugin-card glow-card" style="--accent:255 167 58" data-name="WioSpor" data-motion="sport" data-category="Nuvio · Canlı spor" data-description="Canlı spor ve kanal manifesti." data-code="https://raw.githubusercontent.com/Wiojelt/Nuvio-Addons/live/wiospor/manifest.json"><div class="card-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioSpor/main/assets/logo-20261004.png?rev=2" alt="WioSpor futbol logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">CANLI / SPOR · MANİFEST</span><h3>WioSpor</h3><p>Canlı spor ve kanal grupları.</p><button class="card-open" type="button">Kaynakları gör <span>↗</span></button></div><template><p>Karttaki manifest bağlantısını Nuvio uygulamasının Eklentiler / Plugins bölümüne ekle.</p><h4>Canlı kataloglar</h4><div class="source-list"><span>WioSpor Canlı</span><span>Birdirbir IPTV</span></div></template></article>
       </div>
       <div class="install"><div class="section-caption"><span>Nuvio kurulumu</span><p>Her manifest ayrı eklenir.</p></div><div class="step-grid"><article><b>01</b><h3>Uygulamayı kur</h3><p>Yukarıdaki Nuvio Mobil veya Nuvio TV bağlantısından uygulamanı indir.</p></article><article><b>02</b><h3>Manifesti kopyala</h3><p>İstediğin kartı aç; manifest adresinin sonundaki simgeye bas.</p></article><article><b>03</b><h3>Eklentiyi ekle</h3><p>Nuvio’da Eklentiler / Plugins bölümünü aç. Eklenti ekle alanına manifest adresini yapıştırıp kur.</p></article></div></div>
+    </section>
+
     </section>
 
     <section class="platform-panel" id="panel-bitchord" role="tabpanel" aria-labelledby="tab-bitchord" hidden>

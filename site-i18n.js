@@ -87,7 +87,8 @@ sürüm sayfasından ↗|release page ↗
 indir.|.
 Depoyu ekle|Add the repository
 Ayarlar|Settings
-Eklentiler|Extensions
+Eklentiler|Addons
+Eklenti platformu|Addon platform
 Depo Ekle|Add repository
 alanına|— enter
 yaz.|here.

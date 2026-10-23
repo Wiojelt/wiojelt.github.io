@@ -1,8 +1,10 @@
 (() => {
   const root = document.documentElement;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const tabs = [...document.querySelectorAll('[role="tab"]')];
-  const panels = {cloudstream: document.querySelector('#panel-cloudstream'), nuvio: document.querySelector('#panel-nuvio'), bitchord: document.querySelector('#panel-bitchord'), wiotv: document.querySelector('#panel-wiotv')};
+  const tabs = [...document.querySelectorAll('#platforms > [role="tab"]')];
+  const addonTabs = [...document.querySelectorAll('#addon-platforms > [role="tab"]')];
+  const addonPanels = {cloudstream: document.querySelector('#panel-cloudstream'), nuvio: document.querySelector('#panel-nuvio')};
+  const panels = {addons: document.querySelector('#panel-addons'), bitchord: document.querySelector('#panel-bitchord'), wiotv: document.querySelector('#panel-wiotv')};
   const themeButton = document.querySelector('#theme-toggle');
   const paletteButton = document.querySelector('#palette-toggle');
   const paletteMenu = document.querySelector('#palette-menu');
@@ -113,6 +115,16 @@
   updateHeader();
 
   function showTab(id, scroll = false) {
+    if (addonPanels[id]) {
+      if (activeCard && !addonPanels[id].contains(activeCard)) setExpanded(activeCard, false);
+      addonTabs.forEach(tab => {
+        const selected = tab.id === `tab-${id}`;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      Object.entries(addonPanels).forEach(([key, panel]) => { panel.hidden = key !== id; });
+      id = 'addons';
+    }
     if (!panels[id]) return;
     root.dataset.platform = id;
     updatePalette();
@@ -124,23 +136,24 @@
     Object.entries(panels).forEach(([key, panel]) => { panel.hidden = key !== id; });
     if (scroll) document.querySelector('#platforms').scrollIntoView({behavior: reduced ? 'auto' : 'smooth', block: 'start'});
   }
-  tabs.forEach((tab, index) => {
+  [tabs, addonTabs].forEach(group => group.forEach((tab, index) => {
     tab.addEventListener('click', () => { const id = tab.id.slice(4); showTab(id); history.replaceState(null, '', `#${id}`); });
     tab.addEventListener('keydown', event => {
       if (!['ArrowLeft','ArrowRight'].includes(event.key)) return;
       event.preventDefault();
-      const next = tabs[(index + (event.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      const next = group[(index + (event.key === 'ArrowRight' ? 1 : group.length - 1)) % group.length];
       next.focus(); next.click();
     });
-  });
+  }));
   document.querySelectorAll('[data-tab-link]').forEach(link => link.addEventListener('click', event => {
     event.preventDefault();
     const id = link.dataset.tabLink;
     showTab(id, true);
     history.replaceState(null, '', `#${id}`);
   }));
-  window.addEventListener('hashchange', () => { if (panels[location.hash.slice(1)]) showTab(location.hash.slice(1)); });
-  showTab(panels[location.hash.slice(1)] ? location.hash.slice(1) : 'cloudstream');
+  window.addEventListener('hashchange', () => showTab(location.hash.slice(1)));
+  const initialTab = location.hash.slice(1);
+  showTab(panels[initialTab] || addonPanels[initialTab] ? initialTab : 'cloudstream');
 
   async function copyValue(value) {
     let copied = false;
