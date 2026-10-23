@@ -155,7 +155,7 @@ BitChord’da|In BitChord, open
 Ayarlar → Kaynaklar → Eklenti ekle|Settings → Sources → Add addon
 bölümüne bağlantıyı yapıştırıp kaydet.|, paste the link and save.
 Film, dizi ve canlı TV, telefonunda ve televizyonunda. Kendi M3U veya Xtream listeni ekle; izleme geçmişinle kaldığın yerden devam et.|Movies, series and live TV on your phone and television. Add your own M3U or Xtream playlist and pick up where you left off.
-Beta APK indir|Download Beta APK
+Son sürümü indir|Download latest version
 Downloader kodu|Downloader code
 Downloader kodunu kopyala|Copy Downloader code
 Downloader uygulamasına bu kodu gir.|Enter this code in the Downloader app.
