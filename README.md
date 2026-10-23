@@ -1,8 +1,5 @@
 # WioStream
 
-https://wiojelt.github.io/
+[Website](https://wiojelt.github.io/) · [WioLand](https://github.com/Wiojelt/WioLand) · [BitChord modules](https://github.com/Wiojelt/WioLand/tree/main/bitchord) · [WioTV Beta](https://github.com/Wiojelt/Wio-Releases/releases/latest)
 
-CloudStream, BitChord and Nuvio installation links.
-
-[WioLand repository](https://github.com/Wiojelt/WioLand) · [BitChord modules](https://github.com/Wiojelt/WioLand/tree/main/bitchord)
-
+CloudStream, BitChord, Nuvio and WioTV. Turkish and English.

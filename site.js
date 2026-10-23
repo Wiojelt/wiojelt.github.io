@@ -2,7 +2,7 @@
   const root = document.documentElement;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const tabs = [...document.querySelectorAll('[role="tab"]')];
-  const panels = {cloudstream: document.querySelector('#panel-cloudstream'), nuvio: document.querySelector('#panel-nuvio'), bitchord: document.querySelector('#panel-bitchord')};
+  const panels = {cloudstream: document.querySelector('#panel-cloudstream'), nuvio: document.querySelector('#panel-nuvio'), bitchord: document.querySelector('#panel-bitchord'), wiotv: document.querySelector('#panel-wiotv')};
   const themeButton = document.querySelector('#theme-toggle');
   const paletteButton = document.querySelector('#palette-toggle');
   const paletteMenu = document.querySelector('#palette-menu');
@@ -74,7 +74,7 @@
     try { preferredPalette = localStorage.getItem('wiostream-palette') || preferredPalette; } catch (_) {}
     if (paletteNames.includes(preferredPalette)) root.dataset.palette = preferredPalette;
   }
-  function updateThemeLabel() { themeButton.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Açık temaya geç' : 'Koyu temaya geç'); }
+  function updateThemeLabel() { themeButton.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Açık temaya geç' : 'Koyu temaya geç'); window.WIO_I18N?.apply(themeButton); }
   function updatePalette() {
     paletteChoices.forEach(choice => choice.setAttribute('aria-pressed', String(choice.dataset.paletteChoice === root.dataset.palette)));
     document.querySelector('meta[name="theme-color"]').content = getComputedStyle(root).getPropertyValue('--bg').trim();
@@ -114,6 +114,9 @@
 
   function showTab(id, scroll = false) {
     if (!panels[id]) return;
+    root.dataset.platform = id;
+    updatePalette();
+    document.dispatchEvent(new Event('platformchange'));
     if (activeCard && !panels[id].contains(activeCard)) setExpanded(activeCard, false);
     tabs.forEach(tab => { tab.setAttribute('aria-selected', String(tab.id === `tab-${id}`)); tab.tabIndex = tab.id === `tab-${id}` ? 0 : -1; });
     tabs.find(tab => tab.id === `tab-${id}`)?.scrollIntoView({block: 'nearest', inline: 'nearest', behavior: 'auto'});
@@ -149,6 +152,7 @@
       field.focus(); field.select(); copied = document.execCommand('copy'); field.remove();
     }
     toast.textContent = copied ? 'Kopyalandı' : 'Kopyalanamadı — bağlantıyı seçip kopyala';
+    window.WIO_I18N?.apply(toast);
     toast.classList.add('show');
     clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 2100);
   }
@@ -222,6 +226,7 @@
     detail.inert = !expanded;
     detail.setAttribute('aria-hidden', String(!expanded));
     if (!expanded && activeCard === card) activeCard = null;
+    window.WIO_I18N?.apply(button);
   }
   function toggleCard(card) {
     stopCardScroll();
@@ -339,6 +344,7 @@
     }
   });
   document.querySelector('#year').textContent = new Date().getFullYear();
+  window.WIO_I18N?.init();
 
   if (!reduced && 'IntersectionObserver' in window) {
     document.body.classList.add('has-reveal');
@@ -400,6 +406,19 @@
   function draw(delta) {
     ctx.clearRect(0,0,width,height);
     const rgb = fieldRgb;
+    if (root.dataset.platform === 'bitchord') {
+      const time = reduced ? 0 : performance.now() / 2800;
+      for (let wave = 0; wave < 3; wave++) {
+        ctx.beginPath();
+        for (let x = 0; x <= width; x += 8) {
+          const envelope = Math.sin(x / width * Math.PI);
+          const y = height * (.42 + wave * .1) + Math.sin(x / 110 + time + wave) * 45 * envelope + Math.sin(x / 53 - time) * 15 * envelope;
+          if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = `rgba(${rgb},${.12 - wave * .025})`; ctx.lineWidth = 1.3; ctx.stroke();
+      }
+      return;
+    }
     for (let i=0;i<points.length;i++) {
       const p=points[i];
       if (delta && !reduced) {p.x+=p.vx*delta;p.y+=p.vy*delta;if(p.x<0||p.x>width)p.vx*=-1;if(p.y<0||p.y>height)p.vy*=-1;}
@@ -428,6 +447,7 @@
   window.addEventListener('pointermove', event => {mouse.x=event.clientX;mouse.y=event.clientY;}, {passive:true});
   window.addEventListener('pointerleave', () => {mouse.x=-1000;mouse.y=-1000;});
   document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+  document.addEventListener('platformchange', () => draw(0));
   resize();start();
 })();
 

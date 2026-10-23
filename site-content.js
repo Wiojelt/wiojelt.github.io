@@ -34,7 +34,8 @@ window.WIOSTREAM_EDIT = {
     bitchordManifest: 'https://raw.githubusercontent.com/Wiojelt/WioLand/main/bitchord/manifest.json',
     bitchordRepo: 'https://github.com/kushagrasinghx/BitChord',
     bitchordReleases: 'https://github.com/kushagrasinghx/BitChord/releases',
-    wiolandMusic: 'https://github.com/Wiojelt/WioLand/tree/main/bitchord'
+    wiolandMusic: 'https://github.com/Wiojelt/WioLand/tree/main/bitchord',
+    wiotvReleases: 'https://github.com/Wiojelt/Wio-Releases/releases/latest'
   },
   cards: {
     WioSinema: {summary: 'Birleşik Türkçe film ve dizi keşfi.'},
