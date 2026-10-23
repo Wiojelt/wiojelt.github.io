@@ -134,6 +134,8 @@ Manifesti kopyala|Copy manifest
 Eklentiyi ekle|Add the addon
 Nuvio’da Eklentiler / Plugins bölümünü aç. Eklenti ekle alanına manifest adresini yapıştırıp kur.|Open Addons / Plugins in Nuvio. Paste the manifest URL into Add addon and install.
 BİTCHORD / MÜZİK|BITCHORD / MUSIC
+BitChord’a ayrı ekle · Yalnızca dinleme|Add separately in BitChord · Streaming only
+Eljohnzc manifest adresini kopyala|Copy Eljohnzc manifest URL
 Lossless ve Hi-Res müzik kaynaklarını tek bağlantıyla BitChord’a ekle. Kulaklık şartı yok; ses kalitesi ve erişim seçilen sağlayıcıya bağlı.|Add lossless and Hi-Res music sources to BitChord with one link. No headphones required; audio quality and availability depend on the provider.
 BitChord indir|Download BitChord
 Manifest adresi|Manifest URL
