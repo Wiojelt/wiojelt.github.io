@@ -153,7 +153,7 @@
   }));
   window.addEventListener('hashchange', () => showTab(location.hash.slice(1)));
   const initialTab = location.hash.slice(1);
-  showTab(panels[initialTab] || addonPanels[initialTab] ? initialTab : 'cloudstream');
+  showTab(panels[initialTab] || addonPanels[initialTab] ? initialTab : 'wiotv');
 
   async function copyValue(value) {
     let copied = false;
@@ -461,6 +461,27 @@
   window.addEventListener('pointerleave', () => {mouse.x=-1000;mouse.y=-1000;});
   document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
   document.addEventListener('platformchange', () => draw(0));
+  
+  async function loadLeaderboard() {
+    const tbody = document.querySelector('#leaderboard-body');
+    if (!tbody) return;
+    try {
+      const res = await fetch('https://uye.wiojelt.art/v1/public/leaderboard');
+      if (!res.ok) return;
+      const data = await res.json();
+      if (data && Array.isArray(data.leaderboard) && data.leaderboard.length > 0) {
+        tbody.innerHTML = '';
+        data.leaderboard.forEach(item => {
+          const tr = document.createElement('tr');
+          const medal = item.rank === 1 ? ' 🥇' : item.rank === 2 ? ' 🥈' : item.rank === 3 ? ' 🥉' : '';
+          tr.innerHTML = `<td><strong>${item.rank}${medal}</strong></td><td><code>${item.masked_email}</code></td><td><span class="count-pill">${item.count} Davet</span></td>`;
+          tbody.appendChild(tr);
+        });
+      }
+    } catch (_) {}
+  }
+  loadLeaderboard();
+
   resize();start();
 })();
 

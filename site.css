@@ -367,3 +367,26 @@ body.has-pointer .pointer-light{opacity:.55}
 .addons-icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6}.addon-tabs{margin:0 0 25px;background:transparent;border-color:transparent;padding:0;gap:7px}.addon-tabs .tab{min-height:42px;border:1px solid var(--line);border-radius:11px;font-size:12px}.addon-tabs .tab[aria-selected="true"]{background:var(--surface-strong);color:var(--text);border-color:var(--line-strong);box-shadow:none}
 .extra-addon{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 25px;margin-top:25px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}.extra-addon h3{margin:0 0 4px;font:700 18px 'Space Grotesk',sans-serif}.extra-addon p{margin:0;color:var(--muted);font-size:12px}.extra-addon .actions{margin:0;align-items:center}.extra-addon-link{color:var(--muted);font-size:12px;padding:8px}@media(max-width:560px){.extra-addon{align-items:flex-start;flex-direction:column;padding:20px}}
 .downloader-code{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:460px;padding:18px 20px;margin-top:24px;border:1px solid rgb(255 179 92/.28);border-radius:15px;background:linear-gradient(120deg,rgb(255 179 92/.1),transparent),var(--surface)}.downloader-label{display:block;color:var(--muted);font-size:11px;font-weight:700}.downloader-code code{display:block;margin:5px 0;font:700 clamp(27px,4vw,35px)/1.1 'Space Grotesk',sans-serif;letter-spacing:.09em;color:var(--text);font-variant-numeric:tabular-nums}.downloader-code small{display:block;color:var(--muted);font-size:11px;line-height:1.5}.downloader-code .button{flex:none;padding-inline:12px}.downloader-code svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}@media(max-width:380px){.downloader-code{gap:10px;padding:15px}.downloader-code .button{min-width:38px;padding:0 10px}.downloader-code .button span{display:none}}
+
+
+/* WioTV Custom Elements */
+.wiotv-meta-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line);font:500 11px/1.4 'Space Grotesk',monospace;color:var(--muted);margin-top:16px;word-break:break-all}
+.wiotv-alert-box{margin:20px 0 16px;padding:16px 20px;border-radius:14px;background:rgba(235,87,87,0.08);border:1px solid rgba(235,87,87,0.28);color:var(--text);font-size:13px;line-height:1.65}
+.wiotv-alert-box strong{color:#eb5757}
+.wiotv-info-box{margin:18px 0;padding:16px 20px;border-radius:14px;background:rgba(41,128,185,0.08);border:1px solid rgba(41,128,185,0.28);color:var(--text);font-size:13px;line-height:1.65}
+.wiotv-info-box strong{color:#2980b9}
+.table-wrap{width:100%;overflow-x:auto;border-radius:16px;border:1px solid var(--line);background:var(--surface);margin:18px 0;box-shadow:0 8px 30px var(--shadow)}
+.data-table{width:100%;border-collapse:collapse;text-align:left;font-size:13px}
+.data-table th,.data-table td{padding:14px 20px;border-bottom:1px solid var(--line)}
+.data-table th{background:rgba(255,255,255,0.035);font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--text);font-size:12px;text-transform:uppercase;letter-spacing:0.05em}
+.data-table tr:last-child td{border-bottom:0}
+.data-table tr:hover td{background:rgba(255,255,255,0.02)}
+.count-pill{display:inline-block;padding:3px 10px;border-radius:10px;background:rgba(39,174,96,0.15);color:#27ae60;font-weight:700;font-size:11px}
+.faq-list{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+.faq-item{border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden;transition:border-color .2s}
+.faq-item:hover{border-color:var(--line-strong)}
+.faq-item summary{padding:16px 20px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-family:'Space Grotesk',sans-serif;font-size:14px;color:var(--text)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:18px;color:var(--muted);font-weight:400}
+.faq-item[open] summary::after{content:"−"}
+.faq-content{padding:0 20px 18px;color:var(--muted);font-size:13px;line-height:1.7}

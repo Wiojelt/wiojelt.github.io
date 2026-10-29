@@ -44,12 +44,12 @@
   <main id="top" class="shell">
 
     <div class="tab-bar" id="platforms" role="tablist" aria-label="Platform seçimi">
-      <button class="tab" role="tab" id="tab-wiotv" aria-selected="false" aria-controls="panel-wiotv" type="button"><img src="assets/apps/wiotv.webp" alt="">WioTV <span class="beta-badge">Beta</span></button>
+      <button class="tab" role="tab" id="tab-wiotv" aria-selected="true" aria-controls="panel-wiotv" type="button"><img src="assets/apps/wiotv.webp" alt="">WioTV <span class="beta-badge">v0.1.473</span></button>
       <button class="tab" role="tab" id="tab-bitchord" aria-selected="false" aria-controls="panel-bitchord" type="button"><img src="assets/apps/bitchord.webp" alt="">BitChord</button>
-      <button class="tab" role="tab" id="tab-addons" aria-selected="true" aria-controls="panel-addons" type="button"><svg class="addons-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Eklentiler</button>
+      <button class="tab" role="tab" id="tab-addons" aria-selected="false" aria-controls="panel-addons" type="button"><svg class="addons-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Eklentiler</button>
     </div>
 
-    <section class="platform-panel" id="panel-addons" role="tabpanel" aria-labelledby="tab-addons">
+    <section class="platform-panel" id="panel-addons" role="tabpanel" aria-labelledby="tab-addons" hidden>
       <div class="tab-bar addon-tabs" id="addon-platforms" role="tablist" aria-label="Eklenti platformu">
       <button class="tab" role="tab" id="tab-cloudstream" aria-selected="true" aria-controls="panel-cloudstream" type="button"><img src="https://raw.githubusercontent.com/recloudstream/cloudstream/master/app/src/prerelease/res/mipmap-xxxhdpi/ic_launcher.png" alt="">CloudStream <span>3</span></button>
       <button class="tab" role="tab" id="tab-nuvio" aria-selected="false" aria-controls="panel-nuvio" type="button"><img class="nuvio-icon" src="https://raw.githubusercontent.com/NuvioMedia/NuvioMobile/cmp-rewrite/composeApp/src/commonMain/composeResources/drawable/app_logo_wordmark_original.png" alt="Nuvio"><img src="https://raw.githubusercontent.com/Stremio/stremio-brand/master/logos/SVG/stremio-logo-icon-only-fullcolor.svg" alt="Stremio"><span>Nuvio / Stremio</span></button>
@@ -147,28 +147,194 @@
       </div>
     </section>
 
-    <section class="platform-panel" id="panel-wiotv" role="tabpanel" aria-labelledby="tab-wiotv" hidden>
-      <div class="land-card glow-card" style="--accent:255 179 92">
-        <div class="land-art wiotv-art"><img src="assets/apps/wiotv.webp" alt="WioTV" width="315" height="315"></div>
+    <section class="platform-panel" id="panel-wiotv" role="tabpanel" aria-labelledby="tab-wiotv">
+      <div class="land-card glow-card wiotv-hero" style="--accent:41 128 185">
+        <div class="land-art wiotv-art">
+          <img src="assets/apps/wiotv.webp" alt="WioTV" width="315" height="315">
+        </div>
         <div class="land-content">
-          <div class="eyebrow">ANDROID / ANDROID TV <span class="beta-badge">BETA</span></div>
-          <h2>WioTV</h2>
-          <p>Film, dizi ve canlı TV, telefonunda ve televizyonunda. Kendi M3U veya Xtream listeni ekle; izleme geçmişinle kaldığın yerden devam et.</p>
-          <div class="actions"><a class="button primary" href="https://github.com/Wiojelt/Wio-Releases/releases/latest/download/WioTV-latest.apk" target="_blank" rel="noopener" data-edit-href="wiotvReleases">Son sürümü indir <span>↗</span></a><a class="button outline" href="https://github.com/Wiojelt/Wio-Releases" target="_blank" rel="noopener">GitHub <span>↗</span></a></div>
-          <div class="downloader-code">
-            <div><span class="downloader-label">Downloader kodu</span><code>3721267</code><small>Downloader uygulamasına bu kodu gir.</small></div>
+          <div class="eyebrow" style="color:#2980b9">ANDROID / ANDROID TV <span class="beta-badge">v0.1.473 (HAFİF 57 MB)</span></div>
+          <h2>WioTV <span>Medya Merkezi</span></h2>
+          <p>Android TV, Google TV, TV Box/Stick, telefon ve tabletler için sıfırdan geliştirilmiş hepsi bir arada bağımsız medya oynatıcı ve eğlence platformu. Film, dizi, anime, çizgi film, Yeşilçam klasikleri, canlı radyo, kişisel IPTV istemcisi ve <strong>4K Smart Sync</strong> (çift ses/görüntü eşleme) tek uygulamada.</p>
+
+          <div class="wiotv-info-box">
+            <strong>📢 Ücretsiz İçerik Felsefesi:</strong> WioTV'deki tüm film, dizi, anime, radyo ve açık yayınlar <strong>HER ZAMAN %100 ÜCRETSİZDİR</strong>. Gönüllü VIP destekçi modeli yalnızca sunucu, Workers ve veritabanı masraflarını karşılamak içindir. Lütfen heves kırıcı yorumlarda bulunmayınız.
+          </div>
+
+          <div class="wiotv-alert-box">
+            <strong>⚠️ Forum Kuralları Uyarınca Bilgilendirme:</strong> Uygulamamızda telifli ücretli maç yayınları (mor kanallar vb.) veya yasadışı yetişkin içerikler kesinlikle yer almamaktadır. Yalnızca yasal, ulusal ve serbest açık yayınlar sunulmaktadır.
+          </div>
+
+          <div class="actions">
+            <a class="button primary" href="https://github.com/Wiojelt/Wio-Releases/releases/download/candidate-473/Wio-0.1.473.apk" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              <span>Wio-0.1.473.apk İndir (57 MB)</span>
+            </a>
+            <a class="button outline" href="https://t.me/wiostreambot" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 3.7 2.7 11a1 1 0 0 0 .1 1.9l4.7 1.5 1.8 5.5a1 1 0 0 0 1.8.2l2.8-3.3 4.7 3.4a1.5 1.5 0 0 0 2.3-.9L23 5.4a1.5 1.5 0 0 0-1.5-1.7Zm-3 3.4-8.7 8-.6 2-1-3.1 10.3-6.9Z"/></svg>
+              <span>Giriş Botu (@wiostreambot) ↗</span>
+            </a>
+            <a class="button outline" href="https://t.me/wiolandcs3" target="_blank" rel="noopener">
+              <span>Topluluk (@wiolandcs3) ↗</span>
+            </a>
+            <a class="button outline" href="https://kreosus.com/wiojelt" target="_blank" rel="noopener">
+              <span>Kreosus Destek ↗</span>
+            </a>
+          </div>
+
+          <div class="downloader-code" style="margin-top:16px">
+            <div><span class="downloader-label">Downloader kodu</span><code>3721267</code><small>TV Downloader uygulamasına bu kodu girin.</small></div>
             <button class="button outline" type="button" data-copy="3721267" aria-label="Downloader kodunu kopyala"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Kopyala</span></button>
           </div>
-          <p class="beta-note">Beta sürüm; özellikler ve kaynaklar değişebilir.</p>
+
+          <div class="wiotv-meta-badge">
+            <span>SHA-256: 1ad6f5aa24e8f2f041402b97d3100f91b6d780bc434e731acc15b4bb7d6786f5</span>
+          </div>
         </div>
       </div>
-      <div class="section-caption"><span>Tek uygulama, iki ekran.</span><p>Android telefon ve Android TV için.</p></div>
-      <div class="step-grid wiotv-features">
-        <article><b>01</b><h3>Film ve dizi</h3><p>Film, dizi, anime ve kısa dramaları keşfet.</p></article>
-        <article><b>02</b><h3>Canlı TV</h3><p>Kendi M3U veya Xtream listenle kanallarını aç.</p></article>
-        <article><b>03</b><h3>Kaldığın yerden</h3><p>İzleme geçmişi, çevrimdışı izleme ve tema seçenekleri.</p></article>
+
+      <!-- Quick Feature Steps -->
+      <div class="install">
+        <div class="section-caption"><span>Öne Çıkan Özellikler</span><p>Kullanıcı dostu, hızlı ve akıllı çözümler.</p></div>
+        <div class="step-grid">
+          <article>
+            <div class="step-top"><b>01</b></div>
+            <h3>3 Saniyede TV Eşleme</h3>
+            <p>Kumandayla şifre yazma zahmeti yok! Ekrana gelen QR kodunu telefon kamerasıyla taratın veya fotoğrafını Telegram botumuza (<strong>@wiostreambot</strong>) atın. Oturum anında açılır. Giriş tercihiniz ve profiliniz otomatik hatırlanır, her açılışta tekrar sormaz.</p>
+          </article>
+          <article>
+            <div class="step-top"><b>02</b></div>
+            <h3>Dahili Akıllı Tünel (VPN)</h3>
+            <p>Arka planda çalışan tümleşik tünelleme ve Zapret motoru sayesinde harici hiçbir VPN uygulamasına ihtiyaç duymadan engelsiz ve hızlı bağlantı sağlar.</p>
+          </article>
+          <article>
+            <div class="step-top"><b>03</b></div>
+            <h3>4K Smart Sync & Bulut Eşitleme</h3>
+            <p>Orijinal yabancı 4K yayına Türkçe dublaj ses kanalını milisaniyelik senkronize eder. İzleme geçmişiniz tüm cihazlarınız arasında eşitlenir; TV'de bırakıp telefonda devam edebilirsiniz.</p>
+          </article>
+        </div>
       </div>
-    </section>
+
+      <!-- Live Leaderboard Section -->
+      <div class="status" style="margin-top:50px">
+        <div class="section-caption"><span>Canlı Referans Yarışması</span><p>Topluluğu büyüten üyelerimizin anlık sıralaması ve ödülleri.</p></div>
+        
+        <div class="wiotv-info-box" style="margin-top:10px">
+          <strong>🎁 Yarışma Ödülleri:</strong><br>
+          • <strong>1. Sıra:</strong> Tüm Takım Paketleri (GS, FB, BJK) + 3 Ay VIP Üyelik<br>
+          • <strong>2. Sıra:</strong> Seçilen 2 Takım Paketi + 3 Ay VIP Üyelik<br>
+          • <strong>3. Sıra:</strong> Seçilen 1 Takım Paketi + 3 Ay VIP Üyelik<br>
+          • <strong>4. Sıra:</strong> 2 Ay VIP Üyelik | <strong>5. Sıra:</strong> 1 Ay VIP Üyelik | <strong>6.-10. Sıra:</strong> 1 Takım Paketi
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width:15%">Sıra</th>
+                <th style="width:55%">Üye (Gizlenmiş)</th>
+                <th style="width:30%">Başarılı Davet</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+              <tr><td><strong>1 🥇</strong></td><td><code>m***_@h***l.com</code></td><td><span class="count-pill">284 Davet</span></td></tr>
+              <tr><td><strong>2 🥈</strong></td><td><code>m***5@g***l.com</code></td><td><span class="count-pill">118 Davet</span></td></tr>
+              <tr><td><strong>3 🥉</strong></td><td><code>t***r@g***l.com</code></td><td><span class="count-pill">109 Davet</span></td></tr>
+              <tr><td><strong>4</strong></td><td><code>n***7@g***l.com</code></td><td><span class="count-pill">91 Davet</span></td></tr>
+              <tr><td><strong>5</strong></td><td><code>x***7@g***l.com</code></td><td><span class="count-pill">88 Davet</span></td></tr>
+              <tr><td><strong>6</strong></td><td><code>t***t@g***l.com</code></td><td><span class="count-pill">54 Davet</span></td></tr>
+              <tr><td><strong>7</strong></td><td><code>k***5@g***l.com</code></td><td><span class="count-pill">48 Davet</span></td></tr>
+              <tr><td><strong>8</strong></td><td><code>e***7@g***l.com</code></td><td><span class="count-pill">35 Davet</span></td></tr>
+              <tr><td><strong>9</strong></td><td><code>f***4@g***l.com</code></td><td><span class="count-pill">33 Davet</span></td></tr>
+              <tr><td><strong>10</strong></td><td><code>s***b@o***k.com</code></td><td><span class="count-pill">32 Davet</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- VIP vs Free Comparison -->
+      <div class="status" style="margin-top:50px">
+        <div class="section-caption"><span>Üyelik Modeli</span><p>Standart Ücretsiz Üye vs Destekçi (VIP) Üye Ayrıcalıkları.</p></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Özellik</th>
+                <th>Standart Üye (Ücretsiz)</th>
+                <th>Destekçi / VIP Üye</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Tüm Film, Dizi, Radyo ve Yayınlar</td><td>Sınırsız &amp; Ücretsiz</td><td>Sınırsız &amp; Ücretsiz</td></tr>
+              <tr><td>Maksimum Cihaz Hakkı</td><td>3 Cihaz (Nihai Sürüm)</td><td>10 Cihaza Kadar</td></tr>
+              <tr><td>Profil Sayısı</td><td>1 Profil</td><td>5 Bağımsız Profil (PIN Korumalı)</td></tr>
+              <tr><td>4K Smart Sync (Çift Ses Senkronu)</td><td>Standart Kaynaklar</td><td>Öncelikli 4K Dublaj Senkronizasyonu</td></tr>
+              <tr><td>Gelecek Ekstralar</td><td>Temel Deneyim</td><td>Reklamsız YT/Kick/Twitch, CarPlay</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Rules and Warnings -->
+      <div class="status" style="margin-top:50px">
+        <div class="section-caption"><span>Beta Süreci &amp; Güvenlik Kuralları</span><p>Hesabınızın güvenliği ve adil kullanım için bilinmesi gerekenler.</p></div>
+        <div class="step-grid">
+          <article>
+            <div class="step-top"><b>KURAL 1</b></div>
+            <h3>Beta Sonrası Davet Zorunluluğu</h3>
+            <p>WioTV beta aşamasından çıktıktan sonra yeni kayıtlar yalnızca kayıtlı üyelerden alınacak davet kodlarıyla yapılabilecektir. Uygulamanın çekirdeği herkese açık kalacak, eklentiler destekçilere sunulacaktır.</p>
+          </article>
+          <article>
+            <div class="step-top"><b>KURAL 2</b></div>
+            <h3>Cihaz Başına Tek Kayıt</h3>
+            <p>Kötüye kullanımı ve spamı önlemek için aynı fiziksel cihaz üzerinden (Hardware ID) yalnızca tek bir hesap açılabilir.</p>
+          </article>
+          <article style="border-color:rgba(235,87,87,0.35);background:rgba(235,87,87,0.05)">
+            <div class="step-top"><b style="color:#eb5757">ÖNEMLİ!</b></div>
+            <h3 style="color:#eb5757">Spam Mail &amp; Çifte Ban</h3>
+            <p>Geçici (temp-mail, throwaway vb.) e-postalar sistemden kalıcı banlanır. Spam tespitinde <strong>HEM DAVET EDEN HEM DE DAVET EDİLEN HESAP KALICI OLARAK ENGELLENİR!</strong> Davetlerinizi gerçek kişilere veriniz.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- Roadmap -->
+      <div class="status" style="margin-top:50px">
+        <div class="section-caption"><span>Yol Haritası</span><p>Yakında eklenecek özellikler.</p></div>
+        <div class="status-line">
+          <article class="status-active"><div class="status-meta"><b>01</b><span>AKTİF</span></div><strong>WioTV v0.1.473</strong><p>Hafif sürüm, QR/Bot eşleme, profil hafızası.</p></article>
+          <article class="status-building"><div class="status-meta"><b>02</b><span>GELİŞTİRİLİYOR</span></div><strong>Apple CarPlay &amp; Android Auto</strong><p>Araç multimedya radyo ve podcast desteği.</p></article>
+          <article class="status-building"><div class="status-meta"><b>03</b><span>GELİŞTİRİLİYOR</span></div><strong>WioMusic &amp; YouTube Music</strong><p>Reklamsız arka planda müzik dinleme.</p></article>
+          <article class="status-future"><div class="status-meta"><b>04</b><span>İLERİ HEDEF</span></div><strong>Reklamsız Kick &amp; Twitch &amp; YT</strong><p>Canlı yayın platformlarını doğrudan izleme.</p></article>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="status" style="margin-top:50px">
+        <div class="section-caption"><span>Sıkça Sorulan Sorular (SSS)</span><p>Merak edilen soruların yanıtları.</p></div>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Android TV veya TV Box cihazıma nasıl yüklerim?</summary>
+            <div class="faq-content">Televizyonunuza Google Play Store üzerinden ücretsiz <strong>Downloader</strong> uygulamasını kurun. İndirme linkimizi Downloader adres çubuğuna yazarak APK'yı televizyonunuza doğrudan indirip kurabilirsiniz. İsterseniz bilgisayardan USB belleğe atarak da yükleyebilirsiniz.</div>
+          </details>
+          <details class="faq-item">
+            <summary>APK boyutu neden 57 MB'a indi, bir özellik silindi mi?</summary>
+            <div class="faq-content">Hayır, hiçbir özellik silinmedi. Sadece bilgisayar emülatörleri için konulan gereksiz x86/x64 mimari kütüphaneleri temizlendi. Tüm gerçek TV ve telefonlar ARM mimarisinde çalıştığı için uygulama hafifledi ve çok daha hızlı açılır hale geldi.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Yayınlarda takılma olursa ne yapmalıyım?</summary>
+            <div class="faq-content">WioTV dahili akıllı tünel protokolü kullanır. Anlık sunucu yoğunluğunda oynatıcı ekranında kumandanızdan <strong>Kaynaklar</strong> menüsünü açarak alternatif 2. veya 3. sunucuyu seçebilirsiniz.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Cihaz limitim dolduğunda ne yapabilirim?</summary>
+            <div class="faq-content">Uygulama içinden <strong>Profil › Cihazlar</strong> menüsüne girerek kullanmadığınız eski cihazınızı tek tıkla silebilir ve yeni cihazınızı ekleyebilirsiniz.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Davet kodumu nereden bulabilirim?</summary>
+            <div class="faq-content">Uygulama içerisindeki profil menüsünden veya Telegram botumuz üzerinden (<strong>@wiostreambot</strong>) kendi özel referans linkinizi ve kodunuzu alabilirsiniz.</div>
+          </details>
+        </div>
+      </div>
+    </section></section>
 
     <section class="community" aria-labelledby="community-title">
       <div class="community-copy"><span class="eyebrow">WİOLAND / TOPLULUK</span><h2 id="community-title">Duyurular<br> ve destek.</h2><p>Yeni eklentiler ve kurulum haberleri doğrudan kanalda yayınlanır.</p>
