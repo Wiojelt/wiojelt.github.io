@@ -1,353 +1,87 @@
 <!doctype html>
-<html lang="tr" data-theme="dark" data-palette="mono">
+<html lang="tr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#07090c">
-  <meta name="description" content="WioLand: CloudStream, BitChord, Nuvio ve WioTV için uygulamalar ve kurulum bağlantıları.">
-  <title>WioStream · Wiojelt eklentileri</title>
+  <title>WioTV İndiriliyor...</title>
+  <meta http-equiv="refresh" content="0; url=https://github.com/Wiojelt/Wio-Releases/releases/download/candidate-475/WioTV-latest.apk">
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Wiojelt/WioLand/main/assets/logo-20261004.png?rev=2">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="site.css?v=20261023-apk1">
-  <script src="site-content.js?v=20261023-apk1" defer></script>
-  <script src="site-i18n.js?v=20261023-apk1" defer></script>
-  <script src="site.js?v=20261023-apk1" defer></script>
+  <script>
+    window.location.replace("https://github.com/Wiojelt/Wio-Releases/releases/download/candidate-475/WioTV-latest.apk");
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #0c0b0e;
+      color: #f4f1f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      text-align: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(440px, 100%);
+      padding: 36px 28px;
+      border: 1px solid #36303d;
+      border-radius: 24px;
+      background: #1b1822;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 0 0 12px;
+    }
+    p {
+      color: #b5aab9;
+      font-size: 15px;
+      line-height: 1.5;
+      margin: 0 0 24px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 14px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+    .sub {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #8b8092;
+    }
+    .sub a {
+      color: #a78bfa;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <div class="ambient-scene" aria-hidden="true"></div><canvas id="field" aria-hidden="true"></canvas><div class="pointer-light" aria-hidden="true"></div>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="#top" aria-label="WioStream ana sayfa"><img src="https://github.com/Wiojelt.png?size=96" alt=""><span>WioStream</span></a>
-      <nav class="header-links" aria-label="İletişim">
-        <a href="https://t.me/wiolandcs3" data-edit-href="telegram" target="_blank" rel="noopener" title="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 3.7 2.7 11a1 1 0 0 0 .1 1.9l4.7 1.5 1.8 5.5a1 1 0 0 0 1.8.2l2.8-3.3 4.7 3.4a1.5 1.5 0 0 0 2.3-.9L23 5.4a1.5 1.5 0 0 0-1.5-1.7Zm-3 3.4-8.7 8-.6 2-1-3.1 10.3-6.9Z"/></svg><span class="nav-label">Telegram</span></a>
-        <a href="mailto:josephcyute@protonmail.com" data-edit-href="email" title="E-posta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.5l9 6 9-6V7H3Zm18 2.9-8.4 5.6a1 1 0 0 1-1.2 0L3 9.9V17h18V9.9Z"/></svg><span class="nav-label">E-posta</span></a>
-        <a href="https://kreosus.com/wiojelt" data-edit-href="support" target="_blank" rel="noopener" title="Kreosus ile destek ol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8.5-5.1-9.9-10.4C1 6.7 3.4 3.5 7 3.5c2.1 0 3.8 1 5 2.5 1.2-1.5 2.9-2.5 5-2.5 3.6 0 6 3.2 4.9 7.1C20.5 15.9 12 21 12 21Z"/></svg><span class="nav-label">Destek ol</span></a>
-      </nav>
-      <div class="theme-controls">
-        <div class="language-switch" role="group" aria-label="Dil / Language"><button type="button" data-language="tr" aria-pressed="true" lang="tr">TR</button><button type="button" data-language="en" aria-pressed="false" lang="en">EN</button></div>
-        <button class="palette-toggle" id="palette-toggle" type="button" aria-label="Renk temalarını aç" aria-expanded="false" aria-controls="palette-menu" title="Renk temaları"><span class="palette-mark" aria-hidden="true"></span><span class="palette-label">Tema</span></button>
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Açık temaya geç" title="Açık / koyu görünüm"><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.3A8.7 8.7 0 0 1 8.7 3.8 8.7 8.7 0 1 0 20.2 15.3Z"/></svg></button>
-        <div class="palette-menu" id="palette-menu" hidden><span class="palette-heading">Görünüm</span><div class="palette-options">
-          <button type="button" data-palette-choice="mono" aria-pressed="true"><i class="swatch swatch-mono"></i><span><strong>Gece</strong><small>Siyah / beyaz</small></span></button>
-          <button type="button" data-palette-choice="iris" aria-pressed="false"><i class="swatch swatch-iris"></i><span><strong>Neon</strong><small>Mor / menekşe</small></span></button>
-          <button type="button" data-palette-choice="coffee" aria-pressed="false"><i class="swatch swatch-coffee"></i><span><strong>Kahve</strong><small>Sıcak / toprak</small></span></button>
-          <button type="button" data-palette-choice="tide" aria-pressed="false"><i class="swatch swatch-tide"></i><span><strong>Su</strong><small>Turkuaz / ferah</small></span></button>
-          <button type="button" data-palette-choice="ember" aria-pressed="false"><i class="swatch swatch-ember"></i><span><strong>Kızıl</strong><small>Kırmızı / mercan</small></span></button>
-          <button type="button" data-palette-choice="undertow" aria-pressed="false"><i class="swatch swatch-undertow"></i><span><strong>Derin</strong><small>Lacivert / mavi</small></span></button>
-        </div></div>
-      </div>
+  <div class="card">
+    <div class="badge">WioTV v0.1.475 · En Güncel Sürüm</div>
+    <h1>İndirme Başlatılıyor...</h1>
+    <p>WioTV APK indirmesi otomatik olarak başlayacaktır. Birkaç saniye içinde başlamazsa aşağıdaki butona dokunun:</p>
+    <a class="btn" href="https://github.com/Wiojelt/Wio-Releases/releases/download/candidate-475/WioTV-latest.apk">Doğrudan İndir (APK)</a>
+    <div class="sub">
+      Tanıtım ve eklentiler için: <a href="showcase.html">wiojelt.github.io/showcase.html</a>
     </div>
-  </header>
-
-  <main id="top" class="shell">
-
-    <div class="tab-bar" id="platforms" role="tablist" aria-label="Platform seçimi">
-      <button class="tab" role="tab" id="tab-wiotv" aria-selected="true" aria-controls="panel-wiotv" type="button"><img src="assets/apps/wiotv.webp" alt="">WioTV <span class="beta-badge">v0.1.473</span></button>
-      <button class="tab" role="tab" id="tab-bitchord" aria-selected="false" aria-controls="panel-bitchord" type="button"><img src="assets/apps/bitchord.webp" alt="">BitChord</button>
-      <button class="tab" role="tab" id="tab-addons" aria-selected="false" aria-controls="panel-addons" type="button"><svg class="addons-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Eklentiler</button>
-    </div>
-
-    <section class="platform-panel" id="panel-addons" role="tabpanel" aria-labelledby="tab-addons" hidden>
-      <div class="tab-bar addon-tabs" id="addon-platforms" role="tablist" aria-label="Eklenti platformu">
-      <button class="tab" role="tab" id="tab-cloudstream" aria-selected="true" aria-controls="panel-cloudstream" type="button"><img src="https://raw.githubusercontent.com/recloudstream/cloudstream/master/app/src/prerelease/res/mipmap-xxxhdpi/ic_launcher.png" alt="">CloudStream <span>3</span></button>
-      <button class="tab" role="tab" id="tab-nuvio" aria-selected="false" aria-controls="panel-nuvio" type="button"><img class="nuvio-icon" src="https://raw.githubusercontent.com/NuvioMedia/NuvioMobile/cmp-rewrite/composeApp/src/commonMain/composeResources/drawable/app_logo_wordmark_original.png" alt="Nuvio"><img src="https://raw.githubusercontent.com/Stremio/stremio-brand/master/logos/SVG/stremio-logo-icon-only-fullcolor.svg" alt="Stremio"><span>Nuvio / Stremio</span></button>
-      </div>
-
-    <section class="platform-panel" id="panel-cloudstream" role="tabpanel" aria-labelledby="tab-cloudstream">
-      <div class="old-note"><span class="old-dot"></span><strong data-edit-text="announcementTitle">TurkSinema ve TurkSpor kapandı.</strong> <span data-edit-text="announcementBody">Eski depoları kaldırıp WioLand’i ekleyin.</span></div>
-      <div class="land-card glow-card" style="--accent:255 189 83">
-        <div class="land-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioLand/main/assets/logo-20261004.png?rev=2" alt="Ortada Wiojelt’in kedi profil fotoğrafı, çevresinde Wio eklentileri ve PltStream simgesi"></div>
-        <div class="land-content"><div class="eyebrow">TEK DEPO / TÜM WIO PAKETLERİ</div><h2>WioLand <span>+ MegaWio</span></h2><p><strong data-edit-text="megaWioCode">!megawio</strong> kodu WioLand deposunu ekler. Depodaki MegaWio eklentisini kurunca Sinema, Spor, Anime, Asya, Drama, Kids, Cinema ve LiveHub depoları eklenir; kullanacağın eklentileri seçersin. PltStream içerik eklentisi kapandı; yardımcı paketleri devam ediyor.</p><div class="actions"><button class="button primary" type="button" data-copy="!megawio" data-edit-copy="megaWioCode"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span><span data-edit-text="megaWioCode">!megawio</span> kopyala</span></button><a class="button outline" href="https://github.com/recloudstream/cloudstream/releases" target="_blank" rel="noopener" data-edit-href="cloudstreamBeta">CloudStream Beta APK <span>↗</span></a></div><details class="repo-link"><summary>Doğrudan depo adresi</summary><div class="repo-url"><a href="https://raw.githubusercontent.com/Wiojelt/WioLand/builds/repo.json" data-edit-href="wioLandRepo" data-edit-text="wioLandRepo" target="_blank" rel="noopener">https://raw.githubusercontent.com/Wiojelt/WioLand/builds/repo.json</a><button type="button" data-copy="https://raw.githubusercontent.com/Wiojelt/WioLand/builds/repo.json" data-edit-copy="wioLandRepo" aria-label="WioLand depo adresini kopyala" title="Kopyala"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></button></div></details></div>
-      </div>
-      <div class="section-caption"><span>WioLand içindeki paketler</span><p>Karta tıkla; içerik, sağlayıcılar ve bağlantılar kartın içinde açılır.</p></div>
-      <div class="card-grid">
-        <article class="plugin-card glow-card" style="--accent:246 83 72" data-name="WioSinema" data-motion="pop" data-repo="https://raw.githubusercontent.com/Wiojelt/WioSinema/main/repo.json" data-category="Film ve dizi" data-description="Türkçe film ve dizi kataloğu; TMDB destekli arama ve kaynak seçimi." data-code="!wiosinema"><div class="card-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioSinema/main/assets/logo-20261004.png?rev=2" alt="WioSinema popcorn logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">FİLM / DİZİ · AKTİF</span><h3>WioSinema</h3><p>Birleşik Türkçe film ve dizi keşfi.</p><button class="card-open" type="button">İçeriği gör <span>↗</span></button></div><template><p>TMDB üzerinden başlık ara. Eşleşen filmin veya dizinin altında uygun sağlayıcıları seç.</p><h4>Kaynaklardan bazıları</h4><div class="source-list"><span>FilmMakinesi</span><span>HDFilmCehennemi</span><span>FilmModu</span><span>FullHDFilm</span><span>JetFilmizle</span><span>Dizilla</span><span>DiziBox</span><span>DiziPal</span><span>DDizi</span><span>SezonlukDizi</span><span>BelgeselX</span><span>ClipBox</span><span>CineStream</span></div></template></article>
-        <article class="plugin-card glow-card" style="--accent:255 167 58" data-name="WioSpor" data-motion="sport" data-repo="https://raw.githubusercontent.com/Wiojelt/WioSpor/main/repo.json" data-category="Canlı TV ve spor" data-description="Gruplanmış kanallar ve alternatif yayın kaynakları." data-code="!wiospor"><div class="card-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioSpor/main/assets/logo-20261004.png?rev=2" alt="WioSpor futbol logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">SPOR / CANLI TV · AKTİF</span><h3>WioSpor</h3><p>Kanallar ve alternatif yayınlar bir arada.</p><button class="card-open" type="button">İçeriği gör <span>↗</span></button></div><template><p>Kanalı açınca bulunan kaynakları tek ekranda görüp kullanılabilir yayını seç.</p><h4>Depodaki spor kaynakları</h4><div class="source-list"><span>WioSpor</span><span>Kool TV</span><span>2dir2 Spor</span></div></template></article>
-        <article class="plugin-card glow-card" style="--accent:167 123 250" data-name="WioAnime" data-motion="anime" data-repo="https://raw.githubusercontent.com/Wiojelt/WioAnime/builds/repo.json" data-category="Anime" data-description="Anime sağlayıcıları; birleşik katalog ve tekil kurulum seçenekleri."><div class="card-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioAnime/main/assets/logo-20261004.png?rev=2" alt="WioAnime şeffaf film gözü logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">ANİME · AKTİF</span><h3>WioAnime</h3><p>Birleşik katalog veya tekil sağlayıcılar.</p><button class="card-open" type="button">İçeriği gör <span>↗</span></button></div><template><p>WioAnime kataloğunu veya depodaki sağlayıcıları ayrı ayrı kurabilirsin.</p><h4>Sağlayıcılar</h4><div class="source-list"><span>AnimeciX</span><span>Anizm</span><span>Anizium</span><span>AsyaAnimeleri</span><span>Deokwave</span><span>TRanimaci</span><span>TurkAnime</span></div></template></article>
-        <article class="plugin-card glow-card" style="--accent:59 210 151" data-name="WioAsya" data-motion="fan" data-repo="https://raw.githubusercontent.com/Wiojelt/WioAsya/builds/repo.json" data-category="Asya dizileri" data-description="Asya dizileri için ayrı ayrı kurulan kaynaklar."><div class="card-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioAsya/main/assets/logo-20261004.png?rev=2" alt="WioAsya yeşil yelpaze logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">ASYA DİZİLERİ · AKTİF</span><h3>WioAsya</h3><p>Seçilebilir Asya dizisi kaynakları.</p><button class="card-open" type="button">İçeriği gör <span>↗</span></button></div><template><p>Toplu katalog yerine kullanacağın kaynakları depodan ayrı kur.</p><h4>Sağlayıcılar</h4><div class="source-list"><span>DiziAsya</span><span>DiziKorea</span><span>AsyaLog</span><span>AsyaWatch</span><span>WebDramaTurkey</span></div></template></article>
-        <article class="plugin-card glow-card" style="--accent:237 107 172" data-name="WioDrama" data-motion="drama" data-repo="https://raw.githubusercontent.com/Wiojelt/WioDrama/builds/repo.json" data-category="Kısa drama" data-description="DramaDizilerim ve NetShort için ayrı kurulum."><div class="card-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioDrama/main/assets/logo-20261004.png?rev=2" alt="WioDrama pembe perde logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">KISA DRAMA · AKTİF</span><h3>WioDrama</h3><p>İki kısa drama kaynağı.</p><button class="card-open" type="button">İçeriği gör <span>↗</span></button></div><template><p>İki kaynak birbirinden bağımsız kurulur.</p><h4>Sağlayıcılar</h4><div class="source-list"><span>DramaDizilerim</span><span>NetShort</span></div></template></article>
-        <article class="plugin-card glow-card" style="--accent:250 212 69" data-name="WioKids" data-motion="kids" data-repo="https://raw.githubusercontent.com/Wiojelt/WioKids/main/repo.json" data-category="Çocuk" data-description="Çizgi filmler ve çocuk kanalları için ayrı kaynaklar."><div class="card-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioKids/main/assets/logo-20261004.png?rev=2" alt="WioKids sarı yıldız logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">ÇOCUK · AKTİF</span><h3>WioKids</h3><p>Çizgi filmler ve çocuk kanalları.</p><button class="card-open" type="button">İçeriği gör <span>↗</span></button></div><template><p>Her kaynak kendi kataloğuyla ayrı kurulur.</p><h4>Sağlayıcılar</h4><div class="source-list"><span>ÇizgiMax</span><span>ÇizgiVeDizi</span><span>Çizgi Portal</span><span>ÇizgiFilmİzle Info</span><span>İzleOyna</span><span>ÇizgiFilm TV</span><span>ÇizgiDizi.net</span><span>Çizgi Site</span><span>Minika Çocuk</span><span>Minika GO</span></div></template></article>
-        <article class="plugin-card glow-card" style="--accent:62 200 232" data-name="WioCinema" data-motion="cinema" data-repo="https://raw.githubusercontent.com/Wiojelt/WioCinema/main/repo.json" data-category="Yabancı film ve dizi" data-description="Yabancı film ve dizi kaynakları."><div class="card-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioCinema/main/assets/logo-20261004.png?rev=2" alt="WioCinema camgöbeği sinema logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">DÜNYA SİNEMASI · AKTİF</span><h3>WioCinema</h3><p>Yabancı film ve dizi sağlayıcıları.</p><button class="card-open" type="button">İçeriği gör <span>↗</span></button></div><template><p>Depodan istediğin yabancı film ve dizi kaynağını kur.</p><h4>Sağlayıcılar</h4><div class="source-list"><span>BingeBang</span><span>CineCat</span><span>CineSimkl</span><span>CineStream</span><span>ClipBox</span><span>FlixNetwork</span><span>Mapple</span><span>MovieBox</span><span>RareFilmm</span></div></template></article>
-        <article class="plugin-card glow-card" style="--accent:94 142 255" data-name="LiveHub" data-motion="live" data-repo="https://raw.githubusercontent.com/sika200581/cloudstream-live-hub/main/repo.json" data-category="Canlı yayın" data-description="Twitch, Kick, YouTube Live ve Rumble yayınları."><div class="card-art live-art"><div class="live-mark"><span class="live-play">▶</span><span>LIVE<br>HUB</span></div></div><div class="card-info"><span class="card-kicker">CANLI YAYIN · AKTİF</span><h3>LiveHub</h3><p>Canlı yayın platformları tek yerde.</p><button class="card-open" type="button">İçeriği gör <span>↗</span></button></div><template><p>Canlı yayın platformlarını CloudStream içinden aç.</p><h4>Platformlar</h4><div class="source-list"><span>Twitch</span><span>Kick</span><span>YouTube Live</span><span>Rumble</span></div></template></article>
-        <article class="plugin-card glow-card" style="--accent:159 100 240" data-name="PltStream" data-motion="sync" data-repo="https://raw.githubusercontent.com/pltmustafa/plt-stream/master/repo.json" data-code="plt-stream" data-category="CloudStream · yardımcı eklentiler" data-description="İçerik eklentisi kapandı; yardımcı paketler kullanılmaya devam ediyor."><div class="card-art"><img src="https://raw.githubusercontent.com/pltmustafa/plt-stream/master/icon.png" alt="PltStream resmi logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">YARDIMCI ARAÇLAR · AKTİF</span><h3>PltStream</h3><p>İçerik kaynağı kapandı; araçları sürüyor.</p><small class="card-author">Yapımcı: pltmustafa</small><button class="card-open" type="button">İçeriği gör <span>↗</span></button></div><template><p>PltStream film/dizi eklentisi kapatıldı. Aynı depodaki yardımcı eklentiler kullanılmaya devam ediyor.</p><h4>Depodaki yardımcı eklentiler</h4><ul class="feature-list"><li><strong>Cloud-Sync</strong><span>Yer imlerini, izleme geçmişini, ayarları ve eklentileri cihazlar arasında eşitler.</span></li><li><strong>plt-party</strong><span>Birlikte izlemeyi senkronize eder.</span></li><li><strong>plt-tv</strong><span>M3U/M3U8 listeleri ve canlı TV yayınları için oynatıcıdır.</span></li><li><strong>trakt-sync</strong><span>İzlenenleri işaretler, izleme listesini eşitler.</span></li></ul><p class="author-credit">Yapımcı: <a href="https://github.com/pltmustafa/plt-stream" target="_blank" rel="noopener">pltmustafa ↗</a></p></template></article>
-      </div>
-      <div class="install">
-        <div class="section-caption"><span>CloudStream kurulumu</span><p>Kurulum için üç kısa adım.</p></div>
-        <div class="step-grid">
-          <article>
-            <div class="step-top"><b>01</b><img class="step-app-icon" src="https://raw.githubusercontent.com/recloudstream/cloudstream/master/app/src/prerelease/res/mipmap-xxxhdpi/ic_launcher.png" alt="CloudStream Beta logosu"></div>
-            <h3>Beta APK’yı kur</h3>
-            <p><strong class="red-edition">Kırmızı logolu</strong> CloudStream Beta sürümünü resmi <a href="https://github.com/recloudstream/cloudstream/releases" data-edit-href="cloudstreamBeta" target="_blank" rel="noopener">sürüm sayfasından ↗</a> indir.</p>
-          </article>
-          <article>
-            <div class="step-top"><b>02</b><span class="step-symbols" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 2h4l.7 2.3 2.1.9 2.1-1.1 2.8 2.8-1.1 2.1.9 2.1L24 12v4l-2.3.7-.9 2.1 1.1 2.1-2.8 2.8-2.1-1.1-2.1.9L14 24h-4l-.7-2.3-2.1-.9-2.1 1.1-2.8-2.8 1.1-2.1-.9-2.1L0 16v-4l2.3-.7.9-2.1L2.1 7.1l2.8-2.8L7 5.4l2.1-.9L10 2Z" transform="translate(2 0) scale(.83)"/><circle cx="12" cy="13" r="3.1"/></svg><svg viewBox="0 0 24 24"><path d="M8 3h4v5h5V3h4v7h-5v4h5v7h-5v-5h-4v5H8v-5H3v-4h5V8H3V3h5Z"/></svg></span></div>
-            <h3>Depoyu ekle</h3>
-            <p><span class="inline-route">Ayarlar <span>›</span> Eklentiler <span>›</span> Depo Ekle</span> alanına <button type="button" data-copy="!megawio" data-edit-copy="megaWioCode" data-edit-text="megaWioCode">!megawio</button> yaz.</p>
-          </article>
-          <article>
-            <div class="step-top"><b>03</b><img class="mega-step-icon" src="https://raw.githubusercontent.com/Wiojelt/WioLand/main/assets/logo-20261004.png?rev=2" alt="MegaWio logosu"></div>
-            <h3>Paketlerini seç</h3>
-            <p>WioLand içindeki <strong>MegaWio</strong> eklentisini kur. Eklenen depolardan istediğin eklentileri yükle.</p>
-          </article>
-        </div>
-      </div>
-      <div class="status"><div class="section-caption"><span>Durum</span><p>Şu an kullanılanlar ve geliştirme aşamasındakiler.</p></div>
-        <div class="status-line" aria-label="Eklenti durumu">
-          <article class="status-archive"><div class="status-meta"><b>01</b><span>ARŞİV</span></div><strong data-edit-text="archiveSummary">TurkSinema · TurkSpor · PltStream içerik</strong><p data-edit-text="archiveNote">Bu içerik eklentileri kapandı.</p></article>
-          <article class="status-active"><div class="status-meta"><b>02</b><span>AKTİF</span></div><strong data-edit-text="activeSummary">WioLand · Wio paketleri · Plt araçları</strong><p data-edit-text="activeNote">Güncel kurulum: !megawio</p></article>
-          <article class="status-building"><div class="status-meta"><b>03</b><span>GELİŞTİRİLİYOR</span></div><strong data-edit-text="developingTitle">WiojeltSpor</strong><p data-edit-text="developingNote">VIP şifreleri eklentisi. Henüz bağlantı yok.</p></article>
-          <article class="status-future"><div class="status-meta"><b>04</b><span>İLERİ HEDEF</span></div><strong data-edit-text="futureTitle">WioSpor APK + site</strong><p data-edit-text="futureNote">Bağımsız uygulama ve web sitesi.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="platform-panel" id="panel-nuvio" role="tabpanel" aria-labelledby="tab-nuvio" hidden>
-      <div class="nuvio-hero glow-card" style="--accent:154 116 255"><div><div class="eyebrow">NUVIO / STREMIO</div><h2>Manifesti seç.<br><span>Uygulamaya ekle.</span></h2><p>Wiojelt’in Nuvio eklentileri. Mobil veya TV uygulamasını indir; istediğin manifest adresini karttan kopyala. Stremio indirme bağlantısı ayrıca burada.</p><div class="actions"><a class="button primary" href="https://github.com/NuvioMedia/NuvioMobile/releases" target="_blank" rel="noopener"><img class="button-icon nuvio-icon" src="https://raw.githubusercontent.com/NuvioMedia/NuvioMobile/cmp-rewrite/composeApp/src/commonMain/composeResources/drawable/app_logo_wordmark_original.png" alt="">Nuvio Mobil <span>↗</span></a><a class="button outline" href="https://github.com/NuvioMedia/NuvioTV/releases" target="_blank" rel="noopener"><img class="button-icon nuvio-icon" src="https://raw.githubusercontent.com/NuvioMedia/NuvioMobile/cmp-rewrite/composeApp/src/commonMain/composeResources/drawable/app_logo_wordmark_original.png" alt="">Nuvio TV <span>↗</span></a><a class="button outline" href="https://www.stremio.com/downloads" target="_blank" rel="noopener"><img class="button-icon" src="https://raw.githubusercontent.com/Stremio/stremio-brand/master/logos/SVG/stremio-logo-icon-only-fullcolor.svg" alt="">Stremio <span>↗</span></a></div></div><div class="nuvio-symbol" aria-hidden="true"><img class="nuvio-icon" src="https://raw.githubusercontent.com/NuvioMedia/NuvioMobile/cmp-rewrite/composeApp/src/commonMain/composeResources/drawable/app_logo_wordmark_original.png" alt=""><img src="https://raw.githubusercontent.com/Stremio/stremio-brand/master/logos/SVG/stremio-logo-icon-only-fullcolor.svg" alt=""></div></div>
-      <div class="section-caption"><span>Nuvio manifestleri</span><p>Her kartın içinde kapsadığı kaynaklar var.</p></div>
-      <div class="card-grid nuvio-grid">
-        <article class="plugin-card glow-card" style="--accent:246 83 72" data-name="WioSinema" data-motion="pop" data-category="Nuvio · Film ve dizi" data-description="Türkçe film ve dizi manifesti." data-code="https://raw.githubusercontent.com/Wiojelt/Nuvio-Addons/main/manifest.json"><div class="card-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioSinema/main/assets/logo-20261004.png?rev=2" alt="WioSinema popcorn logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">FİLM / DİZİ · MANİFEST</span><h3>WioSinema</h3><p>Türkçe film ve dizi kaynakları.</p><button class="card-open" type="button">Kaynakları gör <span>↗</span></button></div><template><p>Karttaki manifest bağlantısını Nuvio uygulamasının Eklentiler / Plugins bölümüne ekle.</p><h4>Manifestteki sağlayıcılar</h4><div class="source-list"><span>ClipBox</span><span>Vidup</span><span>Hexa</span><span>VidFastPro</span><span>Vidcore</span><span>Xpass</span></div></template></article>
-        <article class="plugin-card glow-card" style="--accent:62 200 232" data-name="WioCinema" data-motion="cinema" data-category="Nuvio · Dünya sineması" data-description="Yabancı film ve dizi manifesti." data-code="https://raw.githubusercontent.com/Wiojelt/Nuvio-Addons/main/wiocinema/manifest.json"><div class="card-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioCinema/main/assets/logo-20261004.png?rev=2" alt="WioCinema camgöbeği sinema logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">DÜNYA SİNEMASI · MANİFEST</span><h3>WioCinema</h3><p>Yabancı film ve dizi kaynakları.</p><button class="card-open" type="button">Kaynakları gör <span>↗</span></button></div><template><p>Karttaki manifest bağlantısını Nuvio uygulamasının Eklentiler / Plugins bölümüne ekle.</p><h4>Öne çıkan kaynaklar</h4><div class="source-list"><span>CineStream</span><span>Mapple</span><span>BingeBang</span><span>CineCat</span><span>FlixNetwork</span><span>Watch2Movies</span></div></template></article>
-        <article class="plugin-card glow-card" style="--accent:255 167 58" data-name="WioSpor" data-motion="sport" data-category="Nuvio · Canlı spor" data-description="Canlı spor ve kanal manifesti." data-code="https://raw.githubusercontent.com/Wiojelt/Nuvio-Addons/live/wiospor/manifest.json"><div class="card-art"><img src="https://raw.githubusercontent.com/Wiojelt/WioSpor/main/assets/logo-20261004.png?rev=2" alt="WioSpor futbol logosu" loading="lazy"></div><div class="card-info"><span class="card-kicker">CANLI / SPOR · MANİFEST</span><h3>WioSpor</h3><p>Canlı spor ve kanal grupları.</p><button class="card-open" type="button">Kaynakları gör <span>↗</span></button></div><template><p>Karttaki manifest bağlantısını Nuvio uygulamasının Eklentiler / Plugins bölümüne ekle.</p><h4>Canlı kataloglar</h4><div class="source-list"><span>WioSpor Canlı</span><span>Birdirbir IPTV</span></div></template></article>
-      </div>
-      <div class="install"><div class="section-caption"><span>Nuvio kurulumu</span><p>Her manifest ayrı eklenir.</p></div><div class="step-grid"><article><b>01</b><h3>Uygulamayı kur</h3><p>Yukarıdaki Nuvio Mobil veya Nuvio TV bağlantısından uygulamanı indir.</p></article><article><b>02</b><h3>Manifesti kopyala</h3><p>İstediğin kartı aç; manifest adresinin sonundaki simgeye bas.</p></article><article><b>03</b><h3>Eklentiyi ekle</h3><p>Nuvio’da Eklentiler / Plugins bölümünü aç. Eklenti ekle alanına manifest adresini yapıştırıp kur.</p></article></div></div>
-    </section>
-
-    </section>
-
-    <section class="platform-panel" id="panel-bitchord" role="tabpanel" aria-labelledby="tab-bitchord" hidden>
-      <div class="land-card glow-card" style="--accent:255 76 113">
-        <div class="land-art bitchord-art"><div class="record-disc" aria-hidden="true"></div><img src="assets/apps/bitchord.webp" alt="BitChord" width="192" height="192"></div>
-        <div class="land-content">
-          <div class="eyebrow">BİTCHORD / MÜZİK</div>
-          <h2>Wioland</h2>
-          <p>Lossless ve Hi-Res müzik kaynaklarını tek bağlantıyla BitChord’a ekle. Kulaklık şartı yok; ses kalitesi ve erişim seçilen sağlayıcıya bağlı.</p>
-          <div class="actions">
-            <button class="button primary" type="button" data-copy="https://raw.githubusercontent.com/Wiojelt/WioLand/main/bitchord/manifest.json" data-edit-copy="bitchordManifest"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>Manifesti kopyala</button>
-            <a class="button outline" href="https://github.com/kushagrasinghx/BitChord/releases" data-edit-href="bitchordReleases" target="_blank" rel="noopener">BitChord indir <span>↗</span></a>
-          </div>
-          <details class="repo-link"><summary>Manifest adresi</summary><div class="repo-url"><a href="https://raw.githubusercontent.com/Wiojelt/WioLand/main/bitchord/manifest.json" data-edit-href="bitchordManifest" data-edit-text="bitchordManifest" target="_blank" rel="noopener">https://raw.githubusercontent.com/Wiojelt/WioLand/main/bitchord/manifest.json</a><button type="button" data-copy="https://raw.githubusercontent.com/Wiojelt/WioLand/main/bitchord/manifest.json" data-edit-copy="bitchordManifest" aria-label="BitChord manifest adresini kopyala" title="Kopyala"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></button></div></details>
-          <div class="bitchord-links"><a href="https://github.com/Wiojelt/WioLand/tree/main/bitchord" data-edit-href="wiolandMusic" target="_blank" rel="noopener">Wioland kaynak kodu ↗</a><a href="https://github.com/kushagrasinghx/BitChord" data-edit-href="bitchordRepo" target="_blank" rel="noopener">BitChord deposu ↗</a></div>
-        </div>
-      </div>
-      <div class="section-caption"><span>Müzik kaynakları</span><p>Her sağlayıcının erişimi ve kayıt kalitesi farklı olabilir.</p></div>
-      <div class="source-list bitchord-sources"><span>Monochrome</span><span>QQDL / Lucida</span><span>juanjob Hi-Res</span><span>Lossless Bridge</span><span>Eljohnzc</span><span>Tido</span><span>gglos</span><span>Qobuz</span><span>LastBabe</span><span>Internet Archive</span></div>
-      <article class="extra-addon">
-        <div><h3>Eljohnzc Addon</h3><p>BitChord’a ayrı ekle · Yalnızca dinleme</p></div>
-        <div class="actions"><button class="button outline" type="button" data-copy="https://eljohnzcaddon.velixir.run/c57e7b0ef2031b2f1fcd/manifest.json" aria-label="Eljohnzc manifest adresini kopyala">Manifesti kopyala</button><a class="extra-addon-link" href="https://eljohnzcaddon.velixir.run/c57e7b0ef2031b2f1fcd/manifest.json" target="_blank" rel="noopener">Manifest ↗</a></div>
-      </article>
-      <div class="install">
-        <div class="section-caption"><span>BitChord kurulumu</span><p>Eski Wioland kaynağın varsa önce kaldır.</p></div>
-        <div class="step-grid">
-          <article><b>01</b><h3>BitChord’u kur</h3><p>Uygulamayı resmi <a href="https://github.com/kushagrasinghx/BitChord/releases" data-edit-href="bitchordReleases" target="_blank" rel="noopener">sürüm sayfasından ↗</a> indir.</p></article>
-          <article><b>02</b><h3>Manifesti kopyala</h3><p>Yukarıdaki <strong>Manifesti kopyala</strong> düğmesine bas.</p></article>
-          <article><b>03</b><h3>Kaynağı ekle</h3><p>BitChord’da <strong>Ayarlar → Kaynaklar → Eklenti ekle</strong> bölümüne bağlantıyı yapıştırıp kaydet.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="platform-panel" id="panel-wiotv" role="tabpanel" aria-labelledby="tab-wiotv">
-      <div class="land-card glow-card wiotv-hero" style="--accent:41 128 185">
-        <div class="land-art wiotv-art">
-          <img src="assets/apps/wiotv.webp" alt="WioTV" width="315" height="315">
-        </div>
-        <div class="land-content">
-          <div class="eyebrow" style="color:#2980b9">ANDROID / ANDROID TV <span class="beta-badge">v0.1.473 (HAFİF 57 MB)</span></div>
-          <h2>WioTV <span>Medya Merkezi</span></h2>
-          <p>Android TV, Google TV, TV Box/Stick, telefon ve tabletler için sıfırdan geliştirilmiş hepsi bir arada bağımsız medya oynatıcı ve eğlence platformu. Film, dizi, anime, çizgi film, Yeşilçam klasikleri, canlı radyo, kişisel IPTV istemcisi ve <strong>4K Smart Sync</strong> (çift ses/görüntü eşleme) tek uygulamada.</p>
-
-          <div class="wiotv-info-box">
-            <strong>📢 Ücretsiz İçerik Felsefesi:</strong> WioTV'deki tüm film, dizi, anime, radyo ve açık yayınlar <strong>HER ZAMAN %100 ÜCRETSİZDİR</strong>. Gönüllü VIP destekçi modeli yalnızca sunucu, Workers ve veritabanı masraflarını karşılamak içindir. Lütfen heves kırıcı yorumlarda bulunmayınız.
-          </div>
-
-          <div class="wiotv-alert-box">
-            <strong>⚠️ Forum Kuralları Uyarınca Bilgilendirme:</strong> Uygulamamızda telifli ücretli maç yayınları (mor kanallar vb.) veya yasadışı yetişkin içerikler kesinlikle yer almamaktadır. Yalnızca yasal, ulusal ve serbest açık yayınlar sunulmaktadır.
-          </div>
-
-          <div class="actions">
-            <a class="button primary" href="https://github.com/Wiojelt/Wio-Releases/releases/download/candidate-473/Wio-0.1.473.apk" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              <span>Wio-0.1.473.apk İndir (57 MB)</span>
-            </a>
-            <a class="button outline" href="https://t.me/wiostreambot" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 3.7 2.7 11a1 1 0 0 0 .1 1.9l4.7 1.5 1.8 5.5a1 1 0 0 0 1.8.2l2.8-3.3 4.7 3.4a1.5 1.5 0 0 0 2.3-.9L23 5.4a1.5 1.5 0 0 0-1.5-1.7Zm-3 3.4-8.7 8-.6 2-1-3.1 10.3-6.9Z"/></svg>
-              <span>Giriş Botu (@wiostreambot) ↗</span>
-            </a>
-            <a class="button outline" href="https://t.me/wiolandcs3" target="_blank" rel="noopener">
-              <span>Topluluk (@wiolandcs3) ↗</span>
-            </a>
-            <a class="button outline" href="https://kreosus.com/wiojelt" target="_blank" rel="noopener">
-              <span>Kreosus Destek ↗</span>
-            </a>
-          </div>
-
-          <div class="downloader-code" style="margin-top:16px">
-            <div><span class="downloader-label">Downloader kodu</span><code>3721267</code><small>TV Downloader uygulamasına bu kodu girin.</small></div>
-            <button class="button outline" type="button" data-copy="3721267" aria-label="Downloader kodunu kopyala"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Kopyala</span></button>
-          </div>
-
-          <div class="wiotv-meta-badge">
-            <span>SHA-256: 1ad6f5aa24e8f2f041402b97d3100f91b6d780bc434e731acc15b4bb7d6786f5</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Quick Feature Steps -->
-      <div class="install">
-        <div class="section-caption"><span>Öne Çıkan Özellikler</span><p>Kullanıcı dostu, hızlı ve akıllı çözümler.</p></div>
-        <div class="step-grid">
-          <article>
-            <div class="step-top"><b>01</b></div>
-            <h3>3 Saniyede TV Eşleme</h3>
-            <p>Kumandayla şifre yazma zahmeti yok! Ekrana gelen QR kodunu telefon kamerasıyla taratın veya fotoğrafını Telegram botumuza (<strong>@wiostreambot</strong>) atın. Oturum anında açılır. Giriş tercihiniz ve profiliniz otomatik hatırlanır, her açılışta tekrar sormaz.</p>
-          </article>
-          <article>
-            <div class="step-top"><b>02</b></div>
-            <h3>Dahili Akıllı Tünel (VPN)</h3>
-            <p>Arka planda çalışan tümleşik tünelleme ve Zapret motoru sayesinde harici hiçbir VPN uygulamasına ihtiyaç duymadan engelsiz ve hızlı bağlantı sağlar.</p>
-          </article>
-          <article>
-            <div class="step-top"><b>03</b></div>
-            <h3>4K Smart Sync & Bulut Eşitleme</h3>
-            <p>Orijinal yabancı 4K yayına Türkçe dublaj ses kanalını milisaniyelik senkronize eder. İzleme geçmişiniz tüm cihazlarınız arasında eşitlenir; TV'de bırakıp telefonda devam edebilirsiniz.</p>
-          </article>
-        </div>
-      </div>
-
-      <!-- Live Leaderboard Section -->
-      <div class="status" style="margin-top:50px">
-        <div class="section-caption"><span>Canlı Referans Yarışması</span><p>Topluluğu büyüten üyelerimizin anlık sıralaması ve ödülleri.</p></div>
-        
-        <div class="wiotv-info-box" style="margin-top:10px">
-          <strong>🎁 Yarışma Ödülleri:</strong><br>
-          • <strong>1. Sıra:</strong> Tüm Takım Paketleri (GS, FB, BJK) + 3 Ay VIP Üyelik<br>
-          • <strong>2. Sıra:</strong> Seçilen 2 Takım Paketi + 3 Ay VIP Üyelik<br>
-          • <strong>3. Sıra:</strong> Seçilen 1 Takım Paketi + 3 Ay VIP Üyelik<br>
-          • <strong>4. Sıra:</strong> 2 Ay VIP Üyelik | <strong>5. Sıra:</strong> 1 Ay VIP Üyelik | <strong>6.-10. Sıra:</strong> 1 Takım Paketi
-        </div>
-
-        <div class="table-wrap">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th style="width:15%">Sıra</th>
-                <th style="width:55%">Üye (Gizlenmiş)</th>
-                <th style="width:30%">Başarılı Davet</th>
-              </tr>
-            </thead>
-            <tbody id="leaderboard-body">
-              <tr><td><strong>1 🥇</strong></td><td><code>m***_@h***l.com</code></td><td><span class="count-pill">284 Davet</span></td></tr>
-              <tr><td><strong>2 🥈</strong></td><td><code>m***5@g***l.com</code></td><td><span class="count-pill">118 Davet</span></td></tr>
-              <tr><td><strong>3 🥉</strong></td><td><code>t***r@g***l.com</code></td><td><span class="count-pill">109 Davet</span></td></tr>
-              <tr><td><strong>4</strong></td><td><code>n***7@g***l.com</code></td><td><span class="count-pill">91 Davet</span></td></tr>
-              <tr><td><strong>5</strong></td><td><code>x***7@g***l.com</code></td><td><span class="count-pill">88 Davet</span></td></tr>
-              <tr><td><strong>6</strong></td><td><code>t***t@g***l.com</code></td><td><span class="count-pill">54 Davet</span></td></tr>
-              <tr><td><strong>7</strong></td><td><code>k***5@g***l.com</code></td><td><span class="count-pill">48 Davet</span></td></tr>
-              <tr><td><strong>8</strong></td><td><code>e***7@g***l.com</code></td><td><span class="count-pill">35 Davet</span></td></tr>
-              <tr><td><strong>9</strong></td><td><code>f***4@g***l.com</code></td><td><span class="count-pill">33 Davet</span></td></tr>
-              <tr><td><strong>10</strong></td><td><code>s***b@o***k.com</code></td><td><span class="count-pill">32 Davet</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- VIP vs Free Comparison -->
-      <div class="status" style="margin-top:50px">
-        <div class="section-caption"><span>Üyelik Modeli</span><p>Standart Ücretsiz Üye vs Destekçi (VIP) Üye Ayrıcalıkları.</p></div>
-        <div class="table-wrap">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Özellik</th>
-                <th>Standart Üye (Ücretsiz)</th>
-                <th>Destekçi / VIP Üye</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Tüm Film, Dizi, Radyo ve Yayınlar</td><td>Sınırsız &amp; Ücretsiz</td><td>Sınırsız &amp; Ücretsiz</td></tr>
-              <tr><td>Maksimum Cihaz Hakkı</td><td>3 Cihaz (Nihai Sürüm)</td><td>10 Cihaza Kadar</td></tr>
-              <tr><td>Profil Sayısı</td><td>1 Profil</td><td>5 Bağımsız Profil (PIN Korumalı)</td></tr>
-              <tr><td>4K Smart Sync (Çift Ses Senkronu)</td><td>Standart Kaynaklar</td><td>Öncelikli 4K Dublaj Senkronizasyonu</td></tr>
-              <tr><td>Gelecek Ekstralar</td><td>Temel Deneyim</td><td>Reklamsız YT/Kick/Twitch, CarPlay</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Rules and Warnings -->
-      <div class="status" style="margin-top:50px">
-        <div class="section-caption"><span>Beta Süreci &amp; Güvenlik Kuralları</span><p>Hesabınızın güvenliği ve adil kullanım için bilinmesi gerekenler.</p></div>
-        <div class="step-grid">
-          <article>
-            <div class="step-top"><b>KURAL 1</b></div>
-            <h3>Beta Sonrası Davet Zorunluluğu</h3>
-            <p>WioTV beta aşamasından çıktıktan sonra yeni kayıtlar yalnızca kayıtlı üyelerden alınacak davet kodlarıyla yapılabilecektir. Uygulamanın çekirdeği herkese açık kalacak, eklentiler destekçilere sunulacaktır.</p>
-          </article>
-          <article>
-            <div class="step-top"><b>KURAL 2</b></div>
-            <h3>Cihaz Başına Tek Kayıt</h3>
-            <p>Kötüye kullanımı ve spamı önlemek için aynı fiziksel cihaz üzerinden (Hardware ID) yalnızca tek bir hesap açılabilir.</p>
-          </article>
-          <article style="border-color:rgba(235,87,87,0.35);background:rgba(235,87,87,0.05)">
-            <div class="step-top"><b style="color:#eb5757">ÖNEMLİ!</b></div>
-            <h3 style="color:#eb5757">Spam Mail &amp; Çifte Ban</h3>
-            <p>Geçici (temp-mail, throwaway vb.) e-postalar sistemden kalıcı banlanır. Spam tespitinde <strong>HEM DAVET EDEN HEM DE DAVET EDİLEN HESAP KALICI OLARAK ENGELLENİR!</strong> Davetlerinizi gerçek kişilere veriniz.</p>
-          </article>
-        </div>
-      </div>
-
-      <!-- Roadmap -->
-      <div class="status" style="margin-top:50px">
-        <div class="section-caption"><span>Yol Haritası</span><p>Yakında eklenecek özellikler.</p></div>
-        <div class="status-line">
-          <article class="status-active"><div class="status-meta"><b>01</b><span>AKTİF</span></div><strong>WioTV v0.1.473</strong><p>Hafif sürüm, QR/Bot eşleme, profil hafızası.</p></article>
-          <article class="status-building"><div class="status-meta"><b>02</b><span>GELİŞTİRİLİYOR</span></div><strong>Apple CarPlay &amp; Android Auto</strong><p>Araç multimedya radyo ve podcast desteği.</p></article>
-          <article class="status-building"><div class="status-meta"><b>03</b><span>GELİŞTİRİLİYOR</span></div><strong>WioMusic &amp; YouTube Music</strong><p>Reklamsız arka planda müzik dinleme.</p></article>
-          <article class="status-future"><div class="status-meta"><b>04</b><span>İLERİ HEDEF</span></div><strong>Reklamsız Kick &amp; Twitch &amp; YT</strong><p>Canlı yayın platformlarını doğrudan izleme.</p></article>
-        </div>
-      </div>
-
-      <!-- FAQ Section -->
-      <div class="status" style="margin-top:50px">
-        <div class="section-caption"><span>Sıkça Sorulan Sorular (SSS)</span><p>Merak edilen soruların yanıtları.</p></div>
-        <div class="faq-list">
-          <details class="faq-item" open>
-            <summary>Android TV veya TV Box cihazıma nasıl yüklerim?</summary>
-            <div class="faq-content">Televizyonunuza Google Play Store üzerinden ücretsiz <strong>Downloader</strong> uygulamasını kurun. İndirme linkimizi Downloader adres çubuğuna yazarak APK'yı televizyonunuza doğrudan indirip kurabilirsiniz. İsterseniz bilgisayardan USB belleğe atarak da yükleyebilirsiniz.</div>
-          </details>
-          <details class="faq-item">
-            <summary>APK boyutu neden 57 MB'a indi, bir özellik silindi mi?</summary>
-            <div class="faq-content">Hayır, hiçbir özellik silinmedi. Sadece bilgisayar emülatörleri için konulan gereksiz x86/x64 mimari kütüphaneleri temizlendi. Tüm gerçek TV ve telefonlar ARM mimarisinde çalıştığı için uygulama hafifledi ve çok daha hızlı açılır hale geldi.</div>
-          </details>
-          <details class="faq-item">
-            <summary>Yayınlarda takılma olursa ne yapmalıyım?</summary>
-            <div class="faq-content">WioTV dahili akıllı tünel protokolü kullanır. Anlık sunucu yoğunluğunda oynatıcı ekranında kumandanızdan <strong>Kaynaklar</strong> menüsünü açarak alternatif 2. veya 3. sunucuyu seçebilirsiniz.</div>
-          </details>
-          <details class="faq-item">
-            <summary>Cihaz limitim dolduğunda ne yapabilirim?</summary>
-            <div class="faq-content">Uygulama içinden <strong>Profil › Cihazlar</strong> menüsüne girerek kullanmadığınız eski cihazınızı tek tıkla silebilir ve yeni cihazınızı ekleyebilirsiniz.</div>
-          </details>
-          <details class="faq-item">
-            <summary>Davet kodumu nereden bulabilirim?</summary>
-            <div class="faq-content">Uygulama içerisindeki profil menüsünden veya Telegram botumuz üzerinden (<strong>@wiostreambot</strong>) kendi özel referans linkinizi ve kodunuzu alabilirsiniz.</div>
-          </details>
-        </div>
-      </div>
-    </section></section>
-
-    <section class="community" aria-labelledby="community-title">
-      <div class="community-copy"><span class="eyebrow">WİOLAND / TOPLULUK</span><h2 id="community-title">Duyurular<br> ve destek.</h2><p>Yeni eklentiler ve kurulum haberleri doğrudan kanalda yayınlanır.</p>
-        <div class="community-actions"><a class="button community-primary" href="https://t.me/wiolandcs3" data-edit-href="telegram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 3.7 2.7 11a1 1 0 0 0 .1 1.9l4.7 1.5 1.8 5.5a1 1 0 0 0 1.8.2l2.8-3.3 4.7 3.4a1.5 1.5 0 0 0 2.3-.9L23 5.4a1.5 1.5 0 0 0-1.5-1.7Zm-3 3.4-8.7 8-.6 2-1-3.1 10.3-6.9Z"/></svg>Kanala git <span>↗</span></a><a class="button community-secondary" href="https://kreosus.com/wiojelt" data-edit-href="support" target="_blank" rel="noopener">Destek ol <span>↗</span></a></div>
-      </div>
-      <a class="telegram-preview" href="https://t.me/wiolandcs3/26" data-edit-href="telegramPost" target="_blank" rel="noopener" aria-label="Wioland kanalındaki 29 Eylül duyurusunu Telegram'da aç">
-        <div class="telegram-preview-head"><span class="telegram-avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21.5 3.7 2.7 11a1 1 0 0 0 .1 1.9l4.7 1.5 1.8 5.5a1 1 0 0 0 1.8.2l2.8-3.3 4.7 3.4a1.5 1.5 0 0 0 2.3-.9L23 5.4a1.5 1.5 0 0 0-1.5-1.7Zm-3 3.4-8.7 8-.6 2-1-3.1 10.3-6.9Z"/></svg></span><span class="telegram-identity"><strong data-edit-text="channelName">Wioland</strong><small data-edit-text="channelHandle">@wiolandcs3</small></span><span class="telegram-arrow" aria-hidden="true">↗</span></div>
-        <span class="telegram-date" data-edit-text="channelPreviewDate">29 EYLÜL DUYURUSU</span><p data-edit-text="channelPreviewText">!megawio kodu ile tüm eklentileri tek tıkla kurabilirsiniz.</p><span class="telegram-read">Telegram’da oku <span>→</span></span>
-      </a>
-    </section>
-  </main>
-  <footer class="shell footer"><span>© <span id="year"></span> WioStream · Wiojelt</span><a href="#top">Yukarı ↑</a></footer>
-  <div class="toast" id="toast" role="status" aria-live="polite">Kopyalandı</div>
+  </div>
 </body>
 </html>
-
