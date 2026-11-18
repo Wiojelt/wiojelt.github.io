@@ -34,6 +34,7 @@ window.WIOSTREAM_EDIT = {
     bitchordManifest: 'https://raw.githubusercontent.com/Wiojelt/WioLand/main/bitchord/manifest.json',
     bitchordRepo: 'https://github.com/kushagrasinghx/BitChord',
     bitchordReleases: 'https://github.com/kushagrasinghx/BitChord/releases',
+    dialRepo: 'https://github.com/steeben/Dial',
     wiolandMusic: 'https://github.com/Wiojelt/WioLand/tree/main/bitchord',
     wiotvReleases: 'https://github.com/Wiojelt/Wio-Releases/releases/download/candidate-475/WioTV-latest.apk'
   },
