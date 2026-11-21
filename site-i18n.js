@@ -190,6 +190,8 @@ WioSpor futbol logosu|WioSpor football logo
 WioAnime şeffaf film gözü logosu|WioAnime logo
 WioAsya yeşil yelpaze logosu|WioAsya green fan logo
 WioDrama pembe perde logosu|WioDrama pink curtain logo
+ArcanaDrama perde logosu|ArcanaDrama curtain logo
+15 kısa ve dikey drama kaynağı.|15 short and vertical drama sources.
 WioKids sarı yıldız logosu|WioKids yellow star logo
 WioCinema camgöbeği sinema logosu|WioCinema cinema logo
 PltStream resmi logosu|Official PltStream logo
