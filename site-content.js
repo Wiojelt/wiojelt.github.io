@@ -36,7 +36,7 @@ window.WIOSTREAM_EDIT = {
     bitchordReleases: 'https://github.com/kushagrasinghx/BitChord/releases',
     dialRepo: 'https://github.com/steeben/Dial',
     wiolandMusic: 'https://github.com/Wiojelt/WioLand/tree/main/bitchord',
-    wiotvReleases: 'https://github.com/Wiojelt/Wio-Releases/releases/download/candidate-475/WioTV-latest.apk'
+    wiotvReleases: 'https://github.com/Wiojelt/Wio-Releases/releases/download/candidate-709/WioTV-latest.apk'
   },
   cards: {
     WioSinema: {summary: 'Birleşik Türkçe film ve dizi keşfi.'},
